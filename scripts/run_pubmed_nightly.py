@@ -454,7 +454,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     column_count = max(len(html_headers), 1)
     uniform_width = 100.0 / column_count
     header_cells = [
-        "<th class=\"count-col\">{}</th>".format(htmllib.escape(html_headers[0])),
+        "<th class=\"count-col axis-header axis-term\">{}</th>".format(htmllib.escape(html_headers[0])),
         "<th class=\"count-col\">{}</th>".format(htmllib.escape(html_headers[1] if len(html_headers) > 1 else "")),
     ]
     for header in html_headers[2:]:
@@ -472,7 +472,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
 
         row_term = term or "compound-only"
         cells = []
-        cells.append(f"<td>{row_term}</td>")
+        cells.append(f"<td class=\"axis-term\">{row_term}</td>")
 
         base_col = row[2] if len(row) > 2 else ""
         if is_compound_only_row:
@@ -519,28 +519,37 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         top: 2.4rem;
       }}
       .count-col {{ text-align: center; }}
+      .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; }}
+      .axis-term a {{ display: inline; }}
       .heat-legend {{ color: #444; font-size: 12px; margin-bottom: .5rem; }}
       .error {{ color: #b91c1c; }}
       .high-score {{ outline: 2px solid rgba(59, 130, 246, 0.55); }}
-      .high-score-list {{ margin: 0 0 1rem; padding-left: 1.2rem; }}
+      .high-score-list {{ margin: 0 0 1rem; padding-left: 1.2rem; max-height: 160px; overflow: auto; padding-bottom: 0.15rem; }}
       .footer {{ margin-top: 1rem; color: #666; font-size: 12px; }}
+      .summary-heading {{ font-weight: 600; margin: 0 0 .35rem; }}
       @media (max-width: 960px) {{
         body {{ margin: 0.75rem; }}
         .heat-table {{ min-width: 760px; font-size: 12px; }}
         th, td {{ padding: 4px 5px; }}
         .heat-legend {{ font-size: 11px; }}
+        th.rotate {{ height: 100px; }}
+        th.rotate .angle {{ left: .5rem; top: 2rem; }}
       }}
       @media (max-width: 640px) {{
         body {{ margin: 0.5rem; }}
         h1 {{ font-size: 1.35rem; margin: 0.25rem 0; }}
+        .heat-legend {{ font-size: 10px; }}
+        .high-score-list {{ max-height: 110px; }}
+        p, .high-score-list, .footer, .heat-legend {{ font-size: 11px; }}
         .heat-table {{ min-width: 680px; }}
-        th.rotate {{ height: auto; white-space: normal; }}
+        th.rotate {{ height: auto; white-space: nowrap; }}
         th.rotate .angle {{
           transform: none;
           position: static;
-          display: block;
           left: 0;
           top: 0;
+          display: inline-block;
+          padding: 3px 0;
         }}
       }}
       a {{ color: inherit; text-decoration: none; }}
@@ -552,7 +561,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       <h1>Terpene PubMed Search Results</h1>
       <p>Generated: {timestamp} UTC</p>
       <p class=\"heat-legend\">Heat map: darker blue means higher PubMed hit counts (term-only + pairwise terpene columns).</p>
-      <p>Top higher-scoring pairwise matches:</p>
+      <p class="summary-heading">Top higher-scoring pairwise matches:</p>
       <ul class=\"high-score-list\">
         {summary_html}
       </ul>
