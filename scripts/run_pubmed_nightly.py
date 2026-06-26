@@ -188,12 +188,13 @@ def compute_heat_bounds(rows: List[List[str]], headers: List[str], start_col: in
 
 def summarize_pairwise_cells(rows: List[List[str]], headers: List[str], max_items: int = 15) -> tuple[dict[tuple[int, int], str], str]:
     candidates = []
-    summaries = []
 
     for row_idx, row in enumerate(rows[2:], start=2):
         term = (row[0] or "").strip()
         is_compound_only_row = row_idx == 2 and not term
         if not term and not is_compound_only_row:
+            continue
+        if is_compound_only_row:
             continue
 
         row_term = term or "compound-only"
@@ -206,7 +207,7 @@ def summarize_pairwise_cells(rows: List[List[str]], headers: List[str], max_item
             count = parse_count(raw)
             if count is None:
                 continue
-            query = build_compound_only_query(compound) if is_compound_only_row else build_query(row_term, compound)
+            query = build_query(row_term, compound)
             candidates.append(
                 {
                     "row_idx": row_idx,
