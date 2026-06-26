@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-26T17:25:51+00:00",
+  "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
+  "source_gid": "363407775",
+  "rows": [
+    {
+      "term": "compound-only",
+      "base": "78",
+      "cells": [
+        {
+          "column": "alpha-pinene",
+          "value": "4441",
+          "query": "\"alpha-pinene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alpha-pinene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "beta-pinene",
+          "value": "2179",
+          "query": "\"beta-pinene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22beta-pinene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "humulene",
+          "value": "901",
+          "query": "\"humulene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22humulene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "\u03b2-caryophyllene",
+          "value": "2463",
+          "query": "\"\u03b2-caryophyllene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "caryophyllene oxide",
+          "value": "923",
+          "query": "\"caryophyllene oxide\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22caryophyllene+oxide%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "\u03b2-myrcene",
+          "value": "750",
+          "query": "\"\u03b2-myrcene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%CE%B2-myrcene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "nerolidol",
+          "value": "974",
+          "query": "\"nerolidol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22nerolidol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "linalool",
+          "value": "5006",
+          "query": "\"linalool\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22linalool%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "terpinolene",
+          "value": "522",
+          "query": "\"terpinolene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22terpinolene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "\"phytol terpene\"",
+          "value": "21313",
+          "query": "\"\"phytol terpene\"\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%22phytol+terpene%22%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "fenchol",
+          "value": "81",
+          "query": "\"fenchol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22fenchol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "borneol",
+          "value": "1486",
+          "query": "\"borneol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22borneol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "terpineol",
+          "value": "1656",
+          "query": "\"terpineol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22terpineol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "\u03b1-bisabolol",
+          "value": "482",
+          "query": "\"\u03b1-bisabolol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "ocimene",
+          "value": "1070",
+          "query": "\"ocimene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "limonene",
+          "value": "6597",
+          "query": "\"limonene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22limonene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "1, 8, Cineole",
+          "value": "2143",
+          "query": "\"1, 8, Cineole\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "bornyl acetate",
+          "value": "376",
+          "query": "\"bornyl acetate\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22bornyl+acetate%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "p-cymene",
+          "value": "2449",
+          "query": "\"p-cymene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22p-cymene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "perillyl alcohol",
+          "value": "446",
+          "query": "\"perillyl alcohol\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22perillyl+alcohol%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "Sabinene",
+          "value": "906",
+          "query": "\"Sabinene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sabinene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "alpha-terpinene",
+          "value": "395",
+          "query": "\"alpha-terpinene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alpha-terpinene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "gamma-terpinene",
+          "value": "1270",
+          "query": "\"gamma-terpinene\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gamma-terpinene%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "R-carvone",
+          "value": "186",
+          "query": "\"R-carvone\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22R-carvone%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        },
+        {
+          "column": "S-carvone",
+          "value": "121",
+          "query": "\"S-carvone\"[All Fields]",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22S-carvone%22%5BAll+Fields%5D",
+          "source": "compound-only"
+        }
+      ]
+    }
+  ]
+}
