@@ -28,8 +28,15 @@ jobs:
         env:
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           PUBMED_REQUEST_DELAY: "0.34"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PUBMED_SUMMARY_TOP_CELLS: "12"
+          PUBMED_SUMMARY_MAX_ABSTRACTS: "6"
         run: |
-          python scripts/run_pubmed_nightly.py
+          if [ -n "${OPENAI_API_KEY}" ]; then
+            python scripts/run_pubmed_nightly.py --summarize --summary-top-cells "${PUBMED_SUMMARY_TOP_CELLS:-40}" --summary-max-abstracts "${PUBMED_SUMMARY_MAX_ABSTRACTS:-8}"
+          else
+            python scripts/run_pubmed_nightly.py
+          fi
 
       - name: Commit latest data
         run: |

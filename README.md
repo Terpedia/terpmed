@@ -12,6 +12,11 @@ schedule and publishes results to GitHub Pages.
 - For all pairwise term+terpene cells, it computes log-scaled heatmap intensities directly in the HTML table.
 - By default, existing numeric cells are kept and only placeholder cells are refreshed.
   Use `--force-refresh` to recompute every searchable cell in the matrix in one run.
+- You can optionally summarize results by adding `--summarize`. This:
+  - pulls top PMIDs per query,
+  - fetches their abstracts from PubMed,
+  - and calls an OpenAI-compatible LLM to generate a short evidence summary.
+  The summary appears in cell hover tooltips and is included in `public/results.json`.
 - Publishes:
   - `public/index.html` (human-readable results table with links to PubMed searches),
   - `public/results.csv` (full exported matrix),
@@ -37,11 +42,17 @@ Optional flags:
 - `--public-dir` (default: `public`)
 - `--request-delay` (seconds between PubMed calls)
 - `--api-key` / `NCBI_API_KEY` (optional, for higher rate limits)
+- `--summarize` (download abstracts and generate summaries with OpenAI-style API)
+- `--summary-model` / `OPENAI_MODEL` (default `gpt-4o-mini`)
+- `--summary-max-abstracts` / `PUBMED_SUMMARY_MAX_ABSTRACTS` (default `8`)
+- `--summary-top-cells` / `PUBMED_SUMMARY_TOP_CELLS` (default `40`)
+- `OPENAI_API_KEY` and optional `OPENAI_API_BASE` when using `--summarize`
 
 ## GitHub Actions
 
 - `/.github/workflows/nightly-pubmed.yml` runs every night at `02:30 UTC`.
 - It commits refreshed outputs and deploys the `public/` folder to GitHub Pages.
+- If `OPENAI_API_KEY` is configured in repository secrets, the workflow also runs with `--summarize` and includes tooltip summaries in the generated JSON/HTML.
 - You can adjust timing, output folder, or query formula behavior in that workflow file.
 - After pushing this repository, enable GitHub Pages in Settings → Pages with "Source: GitHub Actions".
 - The workflow writes one table cell per query with a direct PubMed search link.

@@ -19,18 +19,20 @@ import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Iterable
 from typing import List, Optional
 from urllib.parse import urlencode
+import urllib.request
+import xml.etree.ElementTree as ET
 
 import datetime
 import html as htmllib
 
-import urllib.request
-
 
 DEFAULT_SOURCE_SHEET_ID = "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg"
 DEFAULT_SOURCE_GID = "363407775"
-PUBMED_BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+PUBMED_ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+PUBMED_EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 PUBMED_WEB_URL = "https://pubmed.ncbi.nlm.nih.gov/"
 HEATMAP_LOW_COLOR = (250, 252, 255)  # near-white
 HEATMAP_HIGH_COLOR = (15, 56, 149)  # strong indigo
@@ -49,6 +51,12 @@ class Config:
     max_rows: int
     request_delay: float
     api_key: Optional[str]
+    summarize: bool
+    summary_model: str
+    summary_max_abstracts: int
+    summary_top_cells: int
+    summary_api_key: Optional[str]
+    summary_api_base: str
 
 
 def _coerce_path(value: str) -> Path:
@@ -65,6 +73,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--request-delay", type=float, default=float(os.getenv("PUBMED_REQUEST_DELAY", "0.34")))
     parser.add_argument("--api-key", default=os.getenv("NCBI_API_KEY"))
     parser.add_argument("--force-refresh", action="store_true", help="Ignore cached values and recompute all query cells")
+    parser.add_argument(
+        "--summarize",
+        action="store_true",
+        help="Download abstracts and generate summaries for searchable results",
+    )
+    parser.add_argument(
+        "--summary-model",
+        default=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+        help="LLM model for summaries (used when --summarize and OPENAI_API_KEY are present)",
+    )
+    parser.add_argument(
+        "--summary-max-abstracts",
+        type=int,
+        default=int(os.getenv("PUBMED_SUMMARY_MAX_ABSTRACTS", "8")),
+        help="Maximum abstracts fetched per summarized query",
+    )
+    parser.add_argument(
+        "--summary-top-cells",
+        type=int,
+        default=int(os.getenv("PUBMED_SUMMARY_TOP_CELLS", "40")),
+        help="Maximum number of cell summaries generated per run",
+    )
     return parser.parse_args()
 
 
@@ -91,6 +121,72 @@ def normalize_rows(rows: List[List[str]]) -> List[List[str]]:
             row = row + ["" for _ in range(max_cols - len(row))]
         normalized.append(row)
     return normalized
+
+
+def read_local_csv(path: Path) -> List[List[str]]:
+    if not path.exists():
+        return []
+    with path.open("r", newline="", encoding="utf-8") as f:
+        return [row for row in csv.reader(f)]
+
+
+def read_local_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+    return payload if isinstance(payload, dict) else {}
+
+
+def apply_cached_results(rows: List[List[str]], cached_rows: List[List[str]]) -> List[List[str]]:
+    """
+    Pre-fill row values from a previously generated results file where source cells are placeholders.
+    """
+    if not rows or not cached_rows or len(rows) < 3 or len(cached_rows) < 3:
+        return rows
+
+    source_headers = rows[0]
+    cached_headers = cached_rows[0]
+    if not source_headers or not cached_headers:
+        return rows
+
+    cached_header_index: dict[str, int] = {}
+    for idx, header in enumerate(cached_headers):
+        header_value = (header or "").strip()
+        if header_value:
+            cached_header_index[header_value.lower()] = idx
+
+    def row_key(row: List[str]) -> str:
+        return (row[0] or "").strip().lower() or "__compound-axis__"
+
+    cached_by_key: dict[str, List[str]] = {}
+    for cached_row in cached_rows[2:]:
+        cached_by_key[row_key(cached_row)] = cached_row
+
+    for row in rows[2:]:
+        cached_row = cached_by_key.get(row_key(row))
+        if not cached_row:
+            continue
+
+        max_col = min(len(source_headers), len(cached_row), len(cached_headers))
+        if len(row) < max_col:
+            row.extend([""] * (max_col - len(row)))
+
+        for col in range(2, max_col):
+            current_value = (row[col] or "").strip()
+            if current_value not in PLACEHOLDER_VALUES:
+                continue
+            header = (source_headers[col] or "").strip()
+            if not header:
+                continue
+            cached_col = cached_header_index.get(header.lower())
+            if cached_col is None or cached_col >= len(cached_row):
+                continue
+            cached_value = (cached_row[cached_col] or "").strip()
+            if cached_value and cached_value not in PLACEHOLDER_VALUES:
+                row[col] = cached_value
+
+    return rows
 
 
 def build_query(term: str, compound: str) -> str:
@@ -212,25 +308,185 @@ def build_query_variants(term: str, compound: str) -> List[str]:
     return list(dict.fromkeys(candidates))
 
 
+def _api_request_json(url: str, params: dict, timeout: int = 30) -> dict | str:
+    if api_key := params.pop("_api_key", None):
+        params["api_key"] = api_key
+    if "api_key" in params and not params["api_key"]:
+        params.pop("api_key", None)
+    full_url = f"{url}?{urlencode(params)}"
+    with urllib.request.urlopen(full_url, timeout=timeout) as resp:
+        raw = resp.read().decode("utf-8", errors="replace")
+    return raw if params.get("retmode") == "xml" or params.get("retmode") == "text" else json.loads(raw)
+
+
 def pubmed_search_count(query: str, api_key: Optional[str]) -> str:
+    payload = _esearch_payload(query, api_key, retmax=0)
+    return payload["esearchresult"]["count"]
+
+
+def _esearch_payload(query: str, api_key: Optional[str], retmax: int = 0) -> dict:
     params = {
         "db": "pubmed",
         "retmode": "json",
-        "retmax": 0,
+        "retmax": retmax,
         "term": query,
     }
-    if api_key:
-        params["api_key"] = api_key
+    return _api_request_json(PUBMED_ESEARCH_URL, params)  # type: ignore[return-value]
 
-    # Keep implementation dependency-free for GitHub Actions image compatibility.
-    url = f"{PUBMED_BASE_URL}?{urlencode(params)}"
-    with urllib.request.urlopen(url, timeout=30) as resp:
-        raw = resp.read().decode("utf-8", errors="replace")
+
+def pubmed_search_count_and_ids(
+    query: str,
+    api_key: Optional[str],
+    retmax: int,
+) -> tuple[str, List[str]]:
+    payload = _esearch_payload(query, api_key, retmax=retmax)
+    esearch = payload.get("esearchresult", {})
+    count = str(esearch.get("count", "0"))
+    ids = list(esearch.get("idlist", []))
+    return count, ids
+
+
+def fetch_pubmed_abstracts(pmids: Iterable[str], api_key: Optional[str]) -> List[dict]:
+    ids = [pid.strip() for pid in pmids if str(pid).strip()]
+    if not ids:
+        return []
+    chunks = [",".join(ids)]
+    abstracts: List[dict] = []
+    for chunk in chunks:
+        params = {
+            "db": "pubmed",
+            "retmode": "xml",
+            "rettype": "abstract",
+            "id": chunk,
+            "_api_key": api_key,
+        }
+        payload = _api_request_json(PUBMED_EFETCH_URL, params)  # type: ignore[assignment]
+        abstracts.extend(_extract_abstracts_from_xml(payload))
+    return abstracts
+
+
+def _extract_abstracts_from_xml(xml_text: str) -> List[dict]:
     try:
-        payload = json.loads(raw)
-        return payload["esearchresult"]["count"]
-    except Exception as err:  # pragma: no cover - defensive for malformed responses
-        raise RuntimeError(f"Unexpected response for query {query!r}: {raw[:200]}") from err
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return []
+
+    papers: List[dict] = []
+    for article in root.findall(".//PubmedArticle"):
+        pmid = ""
+        pmid_node = article.find(".//PMID")
+        if pmid_node is not None and pmid_node.text:
+            pmid = pmid_node.text.strip()
+
+        title_node = article.find(".//ArticleTitle")
+        title = "".join(title_node.itertext()).strip() if title_node is not None else ""
+
+        abstract_parts = []
+        for node in article.findall(".//Abstract/AbstractText"):
+            heading = (node.attrib.get("Label") or "").strip()
+            text = "".join(node.itertext()).strip()
+            if not text:
+                continue
+            if heading:
+                abstract_parts.append(f"{heading}: {text}")
+            else:
+                abstract_parts.append(text)
+        abstract = "\n".join(abstract_parts).strip()
+        if not abstract:
+            continue
+        papers.append({"pmid": pmid, "title": title, "abstract": abstract})
+    return papers
+
+
+def _normalize_summary_payload(payload: dict) -> str:
+    choices = payload.get("choices") or []
+    if not choices:
+        return ""
+    message = choices[0].get("message") or {}
+    content = message.get("content") or ""
+    if isinstance(content, str):
+        return content.strip()
+    return ""
+
+
+def generate_query_summary(
+    query: str,
+    abstracts: List[dict],
+    api_key: Optional[str],
+    base_url: str,
+    model: str,
+) -> str:
+    if not api_key:
+        return "Summary unavailable (OPENAI_API_KEY not set)."
+    if not abstracts:
+        return "No abstracts available for summarization."
+    if base_url.endswith("/"):
+        base_url = base_url[:-1]
+
+    snippets: List[str] = []
+    for item in abstracts:
+        title = item.get("title") or "Unknown title"
+        abstract = item.get("abstract") or ""
+        if abstract:
+            snippets.append(f"Title: {title}\nAbstract: {abstract}")
+        if len(snippets) >= 4:
+            break
+
+    prompt = (
+        "Summarize the evidence in the abstracts below for the PubMed query. "
+        "Keep it short, evidence-focused, and cautious about inference.\n\n"
+        f"Query: {query}\n\n"
+    )
+    prompt += "\n\n---\n\n".join(snippets)
+
+    body = {
+        "model": model,
+        "temperature": 0.2,
+        "max_tokens": 240,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You are a scientific assistant. Summarize biomedical findings briefly and clearly. "
+                    "Mention the type of evidence represented by the abstracts and avoid overclaiming."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+    }
+    url = f"{base_url}/chat/completions"
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(body).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        response_raw = resp.read().decode("utf-8", errors="replace")
+    response = json.loads(response_raw)
+    return _normalize_summary_payload(response)
+
+
+def load_summary_cache(payload: dict) -> dict[str, str]:
+    rows = payload.get("rows")
+    if not isinstance(rows, list):
+        return {}
+
+    cache: dict[str, str] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        for cell in row.get("cells", []) if isinstance(row.get("cells"), list) else []:
+            if not isinstance(cell, dict):
+                continue
+            query = (cell.get("query") or "").strip()
+            summary = (cell.get("summary") or "").strip()
+            if query and summary:
+                cache[query] = summary
+    return cache
 
 
 def fetch_with_retry(query: str, api_key: Optional[str], delay: float, retries: int = 3) -> str:
@@ -411,7 +667,12 @@ def heatstyle(count: int, min_count: int, max_count: int) -> tuple[str, str]:
     return f"background-color: rgb({r},{g},{b}); color: {text_color};", text_color
 
 
-def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool = False) -> tuple[List[List[str]], List[List[dict]], str]:
+def run_search_grid(
+    rows: List[List[str]],
+    config: Config,
+    force_refresh: bool = False,
+    summary_cache: Optional[dict[str, str]] = None,
+) -> tuple[List[List[str]], List[List[dict]], str]:
     """
     Return:
       - updated rows with counts
@@ -430,6 +691,49 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
     if not data_rows:
         return result_rows, [], timestamp
 
+    summary_cache = dict(summary_cache or {})
+    summary_budget = [max(0, config.summary_top_cells)]
+
+    def make_summary(query: str, count_value: str, source: str) -> str:
+        if summary_budget[0] <= 0 or not config.summarize:
+            return ""
+        if not config.summary_api_key:
+            summary_budget[0] -= 1
+            return "Summary unavailable (OPENAI_API_KEY not set)."
+
+        count = parse_count(count_value)
+        if count is None or count <= 0:
+            return ""
+
+        if query in summary_cache:
+            return summary_cache[query]
+
+        try:
+            _, pmids = pubmed_search_count_and_ids(
+                query,
+                config.api_key,
+                min(config.summary_max_abstracts, max(1, count)),
+            )
+            if not pmids:
+                return f"No abstracts available for query: {query}"
+            abstracts = fetch_pubmed_abstracts(pmids, config.api_key)
+            if not abstracts:
+                return f"No abstract text available for query: {query}"
+            summary = generate_query_summary(
+                query,
+                abstracts,
+                config.summary_api_key,
+                config.summary_api_base,
+                config.summary_model,
+            )
+            if not summary:
+                return f"Summary unavailable for query: {query}"
+            summary_cache[query] = summary
+            summary_budget[0] -= 1
+            return summary
+        except Exception as err:  # pragma: no cover - resilience around network/API errors
+            return f"Summary unavailable ({err.__class__.__name__})"
+
     data_rows_to_process = data_rows[: config.max_rows] if config.max_rows > 0 else data_rows
     for data_index, source_row in enumerate(data_rows_to_process, start=2):
         term = (source_row[0] or "").strip()
@@ -446,13 +750,22 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
 
         if not is_compound_axis_row:
             term_query_candidates = build_term_query_variants(term)
-            base_count, base_query = fetch_with_zero_fallback(
-                term_query_candidates,
-                config.api_key,
-                config.request_delay,
-            )
-            row_out[2] = base_count
-            base_source = "queried" if base_query == term_query_candidates[0] else "fallback"
+            base_cell_value = (row_out[2] if len(row_out) > 2 else "").strip()
+            is_base_to_compute = force_refresh or is_search_cell(base_cell_value)
+            base_query = build_term_only_query(term)
+            if is_base_to_compute and term_query_candidates:
+                base_count, base_query = fetch_with_zero_fallback(
+                    term_query_candidates,
+                    config.api_key,
+                    config.request_delay,
+                )
+                row_out[2] = base_count
+                base_source = "queried" if base_query == term_query_candidates[0] else "fallback"
+            else:
+                base_count = base_cell_value
+                base_source = "kept"
+
+            base_summary = make_summary(base_query, str(base_count), base_source)
             json_cells.append(
                 {
                     "column": headers[2],
@@ -460,9 +773,11 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
                     "query": base_query,
                     "link": make_pubmed_url(base_query),
                     "source": base_source,
+                    "summary": base_summary,
                 }
             )
-            time.sleep(config.request_delay)
+            if is_base_to_compute:
+                time.sleep(config.request_delay)
         else:
             row_out[2] = row_out[2] if len(row_out) > 2 else ""
 
@@ -508,6 +823,8 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
 
             if is_compound_axis_row:
                 source = "compound-only" if query == (compound_queries[0] if compound_queries else build_compound_only_query(compound)) else "fallback"
+
+            summary = make_summary(query, str(count), source)
             json_cells.append(
                 {
                     "column": headers[col_idx],
@@ -515,6 +832,7 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
                     "query": query,
                     "link": make_pubmed_url(query),
                     "source": source,
+                    "summary": summary,
                 }
             )
             if not is_compound_axis_row:
@@ -543,6 +861,21 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     heat_min, heat_max = compute_heat_bounds(data_rows, headers, start_col=2)
     has_heat_values = heat_max > 0
     summary_map, summary_html = summarize_pairwise_cells(rows, headers)
+    json_summary_map: dict[tuple[int, int], str] = {}
+    for row_idx, row_payload in enumerate(json_rows, start=2):
+        for cell in row_payload.get("cells", []):
+            if not isinstance(cell, dict):
+                continue
+            col_name = (cell.get("column") or "").strip()
+            if not col_name:
+                continue
+            try:
+                col = headers.index(col_name)
+            except ValueError:
+                continue
+            summary = (cell.get("summary") or "").strip()
+            if summary:
+                json_summary_map[(row_idx, col)] = summary
 
     def render_cell(
         value: str,
@@ -551,6 +884,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         is_heat_cell: bool = False,
         row_idx: Optional[int] = None,
         col: Optional[int] = None,
+        summary: Optional[str] = None,
     ) -> str:
         display_value = compact_count(value)
         if value in NON_RESULT_VALUES or not value:
@@ -560,20 +894,20 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         cell_style = ""
         link_style = ""
         cell_class = ""
-        summary = None
+        summary_text = summary
         is_highlight = False
         if is_heat_cell and row_idx is not None and col is not None:
-            summary = summary_map.get((row_idx, col))
-            is_highlight = summary is not None
-            if summary is None and query:
+            summary_text = json_summary_map.get((row_idx, col), summary_text)
+            is_highlight = summary_text is not None
+            if summary_text is None and query:
                 count = parse_count(value)
                 if count is None:
-                    summary = f"Search: {query}"
+                    summary_text = f"Search: {query}"
                 elif count == 0:
-                    summary = f"No hits for query: {query}"
+                    summary_text = f"No hits for query: {query}"
                 else:
-                    summary = f"{count:,} hits for query: {query}"
-        if is_highlight and summary:
+                    summary_text = f"{count:,} hits for query: {query}"
+        if is_highlight and summary_text:
             cell_class = " class=\"high-score\""
         if is_heat_cell and has_heat_values:
             count = parse_count(value)
@@ -583,11 +917,11 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                     cell_style = f" style=\"{style}\""
                     link_style = f" style=\"color:{text_color}\""
         if not link:
-            if summary:
-                return f"<td{cell_class} title=\"{htmllib.escape(summary)}\"{cell_style}>{display_value}</td>"
+            if summary_text:
+                return f"<td{cell_class} title=\"{htmllib.escape(summary_text)}\"{cell_style}>{display_value}</td>"
             return f"<td{cell_style}{cell_class}>{display_value}</td>"
-        if summary:
-            return f"<td{cell_class} title=\"{htmllib.escape(summary)}\"{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
+        if summary_text:
+            return f"<td{cell_class} title=\"{htmllib.escape(summary_text)}\"{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
         return f"<td{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
 
     row_terms = list(enumerate(rows[2:], start=2))
@@ -629,6 +963,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                     base_col,
                     make_pubmed_url(query),
                     query=query,
+                    summary=json_summary_map.get((data_index, 2)),
                     is_heat_cell=True,
                     row_idx=data_index,
                     col=2,
@@ -641,6 +976,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                     base_col,
                     None,
                     query=query,
+                    summary=json_summary_map.get((data_index, 2)),
                     is_heat_cell=True,
                     row_idx=data_index,
                     col=2,
@@ -659,6 +995,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                     value,
                     make_pubmed_url(query),
                     query=query,
+                    summary=json_summary_map.get((data_index, col)),
                     is_heat_cell=True,
                     row_idx=data_index,
                     col=col,
@@ -772,11 +1109,25 @@ def main() -> None:
         max_rows=args.max_rows,
         request_delay=args.request_delay,
         api_key=args.api_key,
+        summarize=args.summarize,
+        summary_model=args.summary_model,
+        summary_max_abstracts=args.summary_max_abstracts,
+        summary_top_cells=args.summary_top_cells,
+        summary_api_key=os.getenv("OPENAI_API_KEY"),
+        summary_api_base=os.getenv("OPENAI_API_BASE", "https://api.openai.com/v1"),
     )
 
     rows = normalize_rows(fetch_csv_rows(sheet_csv_url(config.source_sheet_id, config.source_gid)))
+    rows = apply_cached_results(rows, read_local_csv(config.data_dir / "results.csv"))
+    previous_results = read_local_json(config.public_dir / "results.json")
+    previous_summary_cache = load_summary_cache(previous_results)
 
-    updated_rows, json_rows, timestamp = run_search_grid(rows, config, force_refresh=args.force_refresh)
+    updated_rows, json_rows, timestamp = run_search_grid(
+        rows,
+        config,
+        force_refresh=args.force_refresh,
+        summary_cache=previous_summary_cache,
+    )
     write_csv(config.data_dir / "results.csv", updated_rows)
     write_json(
         config.public_dir / "results.json",
