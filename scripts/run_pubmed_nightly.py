@@ -15,6 +15,7 @@ import csv
 import json
 import os
 import math
+import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -109,6 +110,108 @@ def build_compound_only_query(compound: str) -> str:
     return f'"{compound}"[All Fields]'
 
 
+def _strip_and_normalize_term(value: str) -> str:
+    value = (value or "").strip()
+    if not value:
+        return ""
+    value = value.replace("\u2013", "-").replace("\u2014", "-")
+    value = value.replace("\u2019", "'").replace("\u201c", '"').replace("\u201d", '"')
+    value = re.sub(r"\s+", " ", value).strip()
+    return value
+
+
+def _query_term_variants(value: str) -> List[str]:
+    """Generate a small set of broader query term variants."""
+    base = _strip_and_normalize_term(value)
+    if not base:
+        return []
+
+    variants: List[str] = []
+    seen = set()
+
+    def add(candidate: str) -> None:
+        candidate = _strip_and_normalize_term(candidate)
+        if not candidate or candidate in seen:
+            return
+        seen.add(candidate)
+        variants.append(candidate)
+
+    add(base)
+
+    # Remove common wrappers and punctuation clutter.
+    add(re.sub(r'["\'`]+', "", base))
+    add(re.sub(r"[()\[\]{}]", "", base))
+    add(re.sub(r"[;,]|//", " ", base))
+    add(base.replace("/", " "))
+    add(base.replace("-", " "))
+
+    # Try removing parenthetical qualifiers, which often block strict term hits.
+    no_parens = re.sub(r"\s*\([^)]*\)\s*", " ", base)
+    add(no_parens)
+
+    words = base.split()
+    if len(words) >= 3:
+        add(" ".join(words[:2]))
+        add(" ".join(words[-2:]))
+
+    # Remove a few generic trailing qualifiers that can overconstrain phrases.
+    for suffix in ("syndrome", "condition", "disease"):
+        lower_words = [w.lower() for w in words]
+        if lower_words and lower_words[-1] == suffix:
+            add(" ".join(words[:-1]))
+
+    return variants[:4]
+
+
+def _build_fielded_query(text: str, quoted: bool = True) -> str:
+    field = text.replace('"', "").strip()
+    if not field:
+        return ""
+    if quoted:
+        return f'"{field}"[All Fields]'
+    if re.search(r"[^0-9A-Za-z\\s-]", field):
+        return ""
+    return f"{field}[All Fields]"
+
+
+def build_term_query_variants(term: str) -> List[str]:
+    """Build alternate query candidates for a single term."""
+    candidates = [_build_fielded_query(variant, quoted=True) for variant in _query_term_variants(term)]
+    candidates.extend(_build_fielded_query(variant, quoted=False) for variant in _query_term_variants(term))
+    return list(dict.fromkeys([c for c in candidates if c]))
+
+
+def build_query_variants(term: str, compound: str) -> List[str]:
+    """Build a small ordered set of fallback pairwise query variants."""
+    term_candidates = _query_term_variants(term)
+    compound_candidates = _query_term_variants(compound)
+    candidates: List[str] = []
+
+    # Keep strictest behavior first, then broaden progressively.
+    combos = (
+        (True, True),
+        (False, True),
+        (True, False),
+        (False, False),
+    )
+    for term_variant in term_candidates[:3]:
+        term_quoted = _build_fielded_query(term_variant, quoted=True)
+        term_unquoted = _build_fielded_query(term_variant, quoted=False)
+        for compound_variant in compound_candidates[:2]:
+            compound_quoted = _build_fielded_query(compound_variant, quoted=True)
+            compound_unquoted = _build_fielded_query(compound_variant, quoted=False)
+            if not compound_quoted and not compound_unquoted:
+                continue
+            for quoted_term, quoted_comp in combos:
+                left = term_quoted if quoted_term else term_unquoted
+                right = compound_quoted if quoted_comp else compound_unquoted
+                if not left or not right:
+                    continue
+                candidates.append(f"{left} AND {right}")
+
+    return list(dict.fromkeys(candidates))
+
+
 def pubmed_search_count(query: str, api_key: Optional[str]) -> str:
     params = {
         "db": "pubmed",
@@ -140,7 +243,25 @@ def fetch_with_retry(query: str, api_key: Optional[str], delay: float, retries: 
             attempt += 1
             if attempt > retries:
                 return f"ERROR: {err.__class__.__name__}"
-            time.sleep(min(2**attempt * delay, 5.0))
+        time.sleep(min(2**attempt * delay, 5.0))
+
+
+def fetch_with_zero_fallback(
+    query_variants: List[str],
+    api_key: Optional[str],
+    delay: float,
+) -> tuple[str, str]:
+    """Try each query until a non-zero count is found; return count + winning query."""
+    if not query_variants:
+        return "0", ""
+    last_count = ""
+    for candidate in query_variants:
+        count = fetch_with_retry(candidate, api_key, delay)
+        if not str(count).startswith("ERROR:"):
+            last_count = count
+        if count != "0" and not str(count).startswith("ERROR:"):
+            return count, candidate
+    return last_count, query_variants[0]
 
 
 def is_search_cell(value: str) -> bool:
@@ -324,10 +445,14 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
             row_out.extend([""] * (3 - len(row_out)))
 
         if not is_compound_axis_row:
-            base_query = build_term_only_query(term)
-            base_count = fetch_with_retry(base_query, config.api_key, config.request_delay)
+            term_query_candidates = build_term_query_variants(term)
+            base_count, base_query = fetch_with_zero_fallback(
+                term_query_candidates,
+                config.api_key,
+                config.request_delay,
+            )
             row_out[2] = base_count
-            base_source = "queried"
+            base_source = "queried" if base_query == term_query_candidates[0] else "fallback"
             json_cells.append(
                 {
                     "column": headers[2],
@@ -353,9 +478,14 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
             is_pair_to_compute = force_refresh or is_search_cell(cell_value)
 
             if is_compound_axis_row:
-                query = build_compound_only_query(compound)
+                compound_queries = build_term_query_variants(compound)
+                query = compound_queries[0] if compound_queries else build_compound_only_query(compound)
                 if is_pair_to_compute:
-                    count = fetch_with_retry(query, config.api_key, config.request_delay)
+                    count, query = fetch_with_zero_fallback(
+                        compound_queries if compound_queries else [query],
+                        config.api_key,
+                        config.request_delay,
+                    )
                     row_out[col_idx] = count
                     time.sleep(config.request_delay)
                 else:
@@ -366,14 +496,18 @@ def run_search_grid(rows: List[List[str]], config: Config, force_refresh: bool =
                 count = cell_value
                 source = "kept"
             else:
-                query = build_query(term, compound)
-                count = fetch_with_retry(query, config.api_key, config.request_delay)
-                source = "queried"
+                query_variants = build_query_variants(term, compound)
+                count, query = fetch_with_zero_fallback(
+                    query_variants,
+                    config.api_key,
+                    config.request_delay,
+                )
+                source = "queried" if query == query_variants[0] else "fallback"
                 row_out[col_idx] = count
                 time.sleep(config.request_delay)
 
             if is_compound_axis_row:
-                source = "compound-only"
+                source = "compound-only" if query == (compound_queries[0] if compound_queries else build_compound_only_query(compound)) else "fallback"
             json_cells.append(
                 {
                     "column": headers[col_idx],
@@ -413,6 +547,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     def render_cell(
         value: str,
         link: Optional[str],
+        query: Optional[str] = None,
         is_heat_cell: bool = False,
         row_idx: Optional[int] = None,
         col: Optional[int] = None,
@@ -426,9 +561,19 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         link_style = ""
         cell_class = ""
         summary = None
+        is_highlight = False
         if is_heat_cell and row_idx is not None and col is not None:
             summary = summary_map.get((row_idx, col))
-        if summary:
+            is_highlight = summary is not None
+            if summary is None and query:
+                count = parse_count(value)
+                if count is None:
+                    summary = f"Search: {query}"
+                elif count == 0:
+                    summary = f"No hits for query: {query}"
+                else:
+                    summary = f"{count:,} hits for query: {query}"
+        if is_highlight and summary:
             cell_class = " class=\"high-score\""
         if is_heat_cell and has_heat_values:
             count = parse_count(value)
@@ -479,9 +624,28 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
             cells.append("<td></td>")
         elif base_col and base_col not in PLACEHOLDER_VALUES:
             query = build_term_only_query(term)
-            cells.append(render_cell(base_col, make_pubmed_url(query), is_heat_cell=True, row_idx=data_index, col=2))
+            cells.append(
+                render_cell(
+                    base_col,
+                    make_pubmed_url(query),
+                    query=query,
+                    is_heat_cell=True,
+                    row_idx=data_index,
+                    col=2,
+                )
+            )
         elif base_col:
-            cells.append(render_cell(base_col, None, is_heat_cell=True, row_idx=data_index, col=2))
+            query = build_term_only_query(term)
+            cells.append(
+                render_cell(
+                    base_col,
+                    None,
+                    query=query,
+                    is_heat_cell=True,
+                    row_idx=data_index,
+                    col=2,
+                )
+            )
         else:
             cells.append("<td></td>")
         for col in range(3, len(headers)):
@@ -490,7 +654,16 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                 continue
             value = row[col] if col < len(row) else ""
             query = build_compound_only_query(header) if is_compound_only_row else build_query(row_term, header)
-            cells.append(render_cell(value, make_pubmed_url(query), is_heat_cell=True, row_idx=data_index, col=col))
+            cells.append(
+                render_cell(
+                    value,
+                    make_pubmed_url(query),
+                    query=query,
+                    is_heat_cell=True,
+                    row_idx=data_index,
+                    col=col,
+                )
+            )
         body_rows.append(f"<tr>{''.join(cells)}</tr>")
 
     html = f"""<!doctype html>
