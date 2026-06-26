@@ -499,8 +499,13 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
     <title>Terpene PubMed Search Results</title>
     <style>
+      :root {{
+        color-scheme: light;
+      }}
       body {{ font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 1rem; }}
-      table {{ border-collapse: collapse; width: 100%; min-width: max-content; table-layout: fixed; font-size: 14px; }}
+      .container {{ max-width: 100%; overflow: hidden; }}
+      .heat-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.25rem; }}
+      .heat-table {{ border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; font-size: 14px; }}
       th, td {{ border: 1px solid #ddd; padding: 4px 6px; text-align: left; white-space: nowrap; width: {uniform_width:.4f}%; max-width: {uniform_width:.4f}%; }}
       th {{ background: #f5f5f5; position: sticky; top: 0; }}
       th.rotate {{ height: 130px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
@@ -513,12 +518,30 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         top: 2.4rem;
       }}
       .count-col {{ text-align: center; }}
-      .container {{ overflow: auto; }}
       .heat-legend {{ color: #444; font-size: 12px; margin-bottom: .5rem; }}
       .error {{ color: #b91c1c; }}
       .high-score {{ outline: 2px solid rgba(59, 130, 246, 0.55); }}
       .high-score-list {{ margin: 0 0 1rem; padding-left: 1.2rem; }}
       .footer {{ margin-top: 1rem; color: #666; font-size: 12px; }}
+      @media (max-width: 960px) {{
+        body {{ margin: 0.75rem; }}
+        .heat-table {{ min-width: 760px; font-size: 12px; }}
+        th, td {{ padding: 4px 5px; }}
+        .heat-legend {{ font-size: 11px; }}
+      }}
+      @media (max-width: 640px) {{
+        body {{ margin: 0.5rem; }}
+        h1 {{ font-size: 1.35rem; margin: 0.25rem 0; }}
+        .heat-table {{ min-width: 680px; }}
+        th.rotate {{ height: auto; white-space: normal; }}
+        th.rotate .angle {{
+          transform: none;
+          position: static;
+          display: block;
+          left: 0;
+          top: 0;
+        }}
+      }}
       a {{ color: inherit; text-decoration: none; }}
       a:hover {{ text-decoration: underline; }}
     </style>
@@ -533,6 +556,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         {summary_html}
       </ul>
       <p><a href=\"results.csv\">Download CSV</a> · <a href=\"results.json\">Download JSON</a></p>
+    <div class=\"heat-wrap\">
     <table class=\"heat-table\">
         <thead>
           {header_row}
@@ -541,6 +565,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
           {''.join(body_rows)}
         </tbody>
       </table>
+    </div>
       <p class=\"footer\">Source: <a href=\"https://docs.google.com/spreadsheets/d/1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg\" target=\"_blank\" rel=\"noopener noreferrer\">Google Sheet</a></p>
     </main>
   </body>
