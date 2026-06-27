@@ -95,6 +95,11 @@ def parse_args() -> argparse.Namespace:
         default=int(os.getenv("PUBMED_SUMMARY_TOP_CELLS", "40")),
         help="Maximum number of cell summaries generated per run",
     )
+    parser.add_argument(
+        "--render-only",
+        action="store_true",
+        help="Skip PubMed fetching and rebuild HTML from the saved CSV/JSON outputs",
+    )
     return parser.parse_args()
 
 
@@ -886,7 +891,8 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         col: Optional[int] = None,
         summary: Optional[str] = None,
     ) -> str:
-        display_value = compact_count(value)
+        count_value = parse_count(value)
+        display_value = "" if count_value is not None else compact_count(value)
         if value in NON_RESULT_VALUES or not value:
             return "<td></td>"
         if value.startswith("ERROR:"):
@@ -910,9 +916,8 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         if is_highlight and summary_text:
             cell_class = " class=\"high-score\""
         if is_heat_cell and has_heat_values:
-            count = parse_count(value)
-            if count is not None:
-                style, text_color = heatstyle(count, heat_min, heat_max)
+            if count_value is not None:
+                style, text_color = heatstyle(count_value, heat_min, heat_max)
                 if style:
                     cell_style = f" style=\"{style}\""
                     link_style = f" style=\"color:{text_color}\""
@@ -1116,6 +1121,15 @@ def main() -> None:
         summary_api_key=os.getenv("OPENAI_API_KEY"),
         summary_api_base=os.getenv("OPENAI_API_BASE", "https://api.openai.com/v1"),
     )
+
+    if args.render_only:
+        rows = read_local_csv(config.data_dir / "results.csv")
+        json_payload = read_local_json(config.public_dir / "results.json")
+        json_rows = json_payload.get("rows", []) if isinstance(json_payload, dict) else []
+        if not rows:
+            raise SystemExit("render-only mode requires an existing data/results.csv")
+        render_html(config.public_dir, rows[0], rows, json_rows, json_payload.get("generated_at", "cached"))
+        return
 
     rows = normalize_rows(fetch_csv_rows(sheet_csv_url(config.source_sheet_id, config.source_gid)))
     rows = apply_cached_results(rows, read_local_csv(config.data_dir / "results.csv"))
