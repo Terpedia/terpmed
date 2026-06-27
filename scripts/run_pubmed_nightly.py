@@ -1024,14 +1024,14 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       .heat-table {{ border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; font-size: 14px; }}
       th, td {{ border: 1px solid #ddd; padding: 4px 6px; text-align: left; white-space: nowrap; width: {uniform_width:.4f}%; max-width: {uniform_width:.4f}%; }}
       th {{ background: #f5f5f5; position: sticky; top: 0; }}
-      th.rotate {{ height: 130px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
+      th.rotate {{ height: 140px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
       th.rotate .angle {{
         display: inline-block;
-        transform: rotate(-45deg);
-        transform-origin: left top;
+        transform: rotate(-90deg);
+        transform-origin: center center;
         position: relative;
-        left: 0.8rem;
-        top: 2.4rem;
+        left: 0.4rem;
+        top: 4.1rem;
       }}
       .count-col {{ text-align: center; }}
       .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; }}
@@ -1047,8 +1047,8 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         .heat-table {{ min-width: 760px; font-size: 12px; }}
         th, td {{ padding: 4px 5px; }}
         .heat-legend {{ font-size: 11px; }}
-        th.rotate {{ height: 100px; }}
-        th.rotate .angle {{ left: .5rem; top: 2rem; }}
+        th.rotate {{ height: 122px; }}
+        th.rotate .angle {{ left: .1rem; top: 3.45rem; }}
       }}
       @media (max-width: 640px) {{
         body {{ margin: 0.5rem; }}
@@ -1057,14 +1057,15 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         .high-score-list {{ max-height: 110px; }}
         p, .high-score-list, .footer, .heat-legend {{ font-size: 11px; }}
         .heat-table {{ min-width: 680px; }}
-        th.rotate {{ height: auto; white-space: nowrap; }}
+        th.rotate {{ height: 112px; white-space: nowrap; }}
         th.rotate .angle {{
-          transform: none;
-          position: static;
-          left: 0;
-          top: 0;
+          transform: rotate(-90deg);
+          transform-origin: center center;
+          position: relative;
+          left: .05rem;
+          top: 3rem;
           display: inline-block;
-          padding: 3px 0;
+          padding: 0;
         }}
       }}
       a {{ color: inherit; text-decoration: none; }}
