@@ -615,12 +615,9 @@ def summarize_pairwise_cells(rows: List[List[str]], headers: List[str], max_item
 
     summary_rows = []
     for item in highlights:
-        term_label = item["term"]
-        if item["context"]:
-            term_label = f"{term_label} ({item['context']})"
         summary_rows.append(
             {
-                "term": term_label,
+                "term": item["term"],
                 "compound": item["compound"],
                 "count": item["count"],
                 "query": item["query"],
@@ -633,8 +630,7 @@ def summarize_pairwise_cells(rows: List[List[str]], headers: List[str], max_item
     for item in summary_rows:
         summary_html.append(
             "<li>"
-            f"{htmllib.escape(item['term'])} × {htmllib.escape(item['compound'])}: "
-            f"{item['count']:,} hits (query: {htmllib.escape(item['query'])})"
+            f"{htmllib.escape(item['term'])} × {htmllib.escape(item['compound'])}"
             "</li>"
         )
 
