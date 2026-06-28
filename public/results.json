@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-27T03:45:35+00:00",
+  "generated_at": "2026-06-28T03:46:22+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "154",
+      "base": "157",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "#N/A",
+          "value": "1078",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -185,7 +185,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "1270",
+          "value": "1271",
           "query": "\"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -215,7 +215,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "66898",
+          "value": "66955",
           "query": "\"anti-inflammatory\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D",
           "source": "kept",
@@ -675,7 +675,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "60988",
+          "value": "61032",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1247,7 +1247,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "57",
+          "value": "58",
           "query": "\"analgesic\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2047,7 +2047,7 @@
         },
         {
           "column": "ocimene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-coagulant\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2325,7 +2325,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-convulsant\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-convulsant%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2565,11 +2565,11 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "9",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
-          "value": "13930",
+          "value": "13943",
           "query": "\"anti-epileptic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2871,7 +2871,7 @@
         },
         {
           "column": "fenchol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-fungal\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-fungal%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "1",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -3013,7 +3013,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "#N/A",
+          "value": "6",
           "query": "\"anti-microbial\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3259,7 +3259,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-mutagenic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6421,7 +6421,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "2899",
+          "value": "2903",
           "query": "\"gastric protection\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "6",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
@@ -9413,7 +9413,7 @@
     },
     {
       "term": "promotes apoptosis in cancer cells",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "4",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -10269,7 +10269,7 @@
     },
     {
       "term": "skin health",
-      "base": "7",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -11771,7 +11771,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "10089",
+          "value": "10091",
           "query": "\"Hepatitis C\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hepatitis+C%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
