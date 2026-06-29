@@ -928,14 +928,13 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     row_terms = list(enumerate(rows[2:], start=2))
     # headers[0] is blank; headers[2] holds the first query modifier.
     term_headers = [h for h in headers[3:] if h]
-    base_header = "term-only"
-    html_headers = ["term", base_header]
+    html_headers = ["", ""]
     html_headers.extend(term_headers)
     column_count = max(len(html_headers), 1)
     uniform_width = 100.0 / column_count
     header_cells = [
-        "<th class=\"count-col axis-header axis-term\">{}</th>".format(htmllib.escape(html_headers[0])),
-        "<th class=\"count-col\">{}</th>".format(htmllib.escape(html_headers[1] if len(html_headers) > 1 else "")),
+        "<th class=\"count-col axis-header axis-term\"></th>",
+        "<th class=\"count-col\"></th>",
     ]
     for header in html_headers[2:]:
         header_cells.append(
@@ -951,8 +950,9 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
             continue
 
         row_term = term or "compound-only"
+        row_label = term or ""
         cells = []
-        cells.append(f"<td class=\"axis-term\">{row_term}</td>")
+        cells.append(f"<td class=\"axis-term\">{row_label}</td>")
 
         base_col = row[2] if len(row) > 2 else ""
         if is_compound_only_row:
@@ -1017,17 +1017,19 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       body {{ font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 1rem; }}
       .container {{ max-width: 100%; overflow: hidden; }}
       .heat-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.25rem; }}
-      .heat-table {{ border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; font-size: 14px; }}
+      .heat-table {{ border-collapse: collapse; width: 100%; min-width: 1020px; table-layout: fixed; font-size: 14px; }}
       th, td {{ border: 1px solid #ddd; padding: 4px 6px; text-align: left; white-space: nowrap; width: {uniform_width:.4f}%; max-width: {uniform_width:.4f}%; }}
       th {{ background: #f5f5f5; position: sticky; top: 0; }}
-      th.rotate {{ height: 140px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
+      th.rotate {{ height: 160px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
       th.rotate .angle {{
         display: inline-block;
         transform: rotate(-90deg);
         transform-origin: center center;
         position: relative;
-        left: 0.4rem;
-        top: 4.1rem;
+        left: 0.1rem;
+        top: 4.9rem;
+        font-size: 11px;
+        line-height: 1;
       }}
       .count-col {{ text-align: center; }}
       .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; }}
@@ -1040,11 +1042,11 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       .summary-heading {{ font-weight: 600; margin: 0 0 .35rem; }}
       @media (max-width: 960px) {{
         body {{ margin: 0.75rem; }}
-        .heat-table {{ min-width: 760px; font-size: 12px; }}
+        .heat-table {{ min-width: 900px; font-size: 12px; }}
         th, td {{ padding: 4px 5px; }}
         .heat-legend {{ font-size: 11px; }}
-        th.rotate {{ height: 122px; }}
-        th.rotate .angle {{ left: .1rem; top: 3.45rem; }}
+        th.rotate {{ height: 144px; }}
+        th.rotate .angle {{ left: 0; top: 4.2rem; font-size: 10px; }}
       }}
       @media (max-width: 640px) {{
         body {{ margin: 0.5rem; }}
@@ -1052,16 +1054,18 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         .heat-legend {{ font-size: 10px; }}
         .high-score-list {{ max-height: 110px; }}
         p, .high-score-list, .footer, .heat-legend {{ font-size: 11px; }}
-        .heat-table {{ min-width: 680px; }}
-        th.rotate {{ height: 112px; white-space: nowrap; }}
+        .heat-table {{ min-width: 840px; }}
+        th.rotate {{ height: 132px; white-space: nowrap; }}
         th.rotate .angle {{
           transform: rotate(-90deg);
           transform-origin: center center;
           position: relative;
-          left: .05rem;
-          top: 3rem;
+          left: 0;
+          top: 3.75rem;
           display: inline-block;
           padding: 0;
+          font-size: 9px;
+          line-height: 1;
         }}
       }}
       a {{ color: inherit; text-decoration: none; }}
@@ -1072,11 +1076,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     <main class=\"container\">
       <h1>Terpene PubMed Search Results</h1>
       <p>Generated: {timestamp} UTC</p>
-      <p class=\"heat-legend\">Heat map: darker blue means higher PubMed hit counts (term-only + pairwise terpene columns).</p>
-      <p class="summary-heading">Top higher-scoring pairwise matches:</p>
-      <ul class=\"high-score-list\">
-        {summary_html}
-      </ul>
+      <p class=\"heat-legend\">Heat map: darker blue means higher PubMed hit counts.</p>
       <p><a href=\"results.csv\">Download CSV</a> · <a href=\"results.json\">Download JSON</a></p>
     <div class=\"heat-wrap\">
     <table class=\"heat-table\">
@@ -1088,6 +1088,10 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         </tbody>
       </table>
     </div>
+      <p class=\"summary-heading\">Top higher-scoring pairwise matches:</p>
+      <ul class=\"high-score-list\">
+        {summary_html}
+      </ul>
       <p class=\"footer\">Source: <a href=\"https://docs.google.com/spreadsheets/d/1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg\" target=\"_blank\" rel=\"noopener noreferrer\">Google Sheet</a></p>
     </main>
   </body>
