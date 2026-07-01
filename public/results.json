@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-30T03:45:52+00:00",
+  "generated_at": "2026-07-01T03:46:21+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "158",
+      "base": "156",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61075",
+          "value": "61085",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "3",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "7",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -9157,7 +9157,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "15",
+          "value": "#N/A",
           "query": "\"pharmacokinetic\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10055,7 +10055,7 @@
     },
     {
       "term": "sedative, sleep",
-      "base": "4",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -12195,7 +12195,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -16047,7 +16047,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "9",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
