@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-01T03:46:21+00:00",
+  "generated_at": "2026-07-02T03:45:51+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "156",
+      "base": "159",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61085",
+          "value": "61098",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5133,7 +5133,7 @@
     },
     {
       "term": "anti-tumor",
-      "base": "7",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -8301,7 +8301,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neuro-inflammation\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9157,7 +9157,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "15",
           "query": "\"pharmacokinetic\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -10055,7 +10055,7 @@
     },
     {
       "term": "sedative, sleep",
-      "base": "3",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -10687,7 +10687,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-cancer\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12195,7 +12195,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -15619,7 +15619,7 @@
     },
     {
       "term": "arthritis",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -15679,7 +15679,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "7",
+          "value": "#N/A",
           "query": "\"arthritis\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22arthritis%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16047,7 +16047,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
