@@ -40,6 +40,33 @@ HEATMAP_HIGH_COLOR = (15, 56, 149)  # strong indigo
 
 PLACEHOLDER_VALUES = {"", "Loading...", "loading"}
 NON_RESULT_VALUES = {"#N/A", "N/A", "-", "NA"}
+TERPENE_GLYPHS = {
+    "alpha-pinene": ("🫐", "blueberry"),
+    "beta-pinene": ("🍋", "lemon peel"),
+    "humulene": ("🍈", "guava"),
+    "beta-caryophyllene": ("🌶️", "pepper fruit"),
+    "caryophyllene oxide": ("🌶️", "pepper fruit"),
+    "beta-myrcene": ("🥭", "mango"),
+    "nerolidol": ("🍊", "orange blossom / citrus peel"),
+    "linalool": ("🍇", "grape"),
+    "terpinolene": ("🍎", "apple"),
+    "phytol terpene": ("🥝", "kiwi / green fruit"),
+    "fenchol": ("🍋", "lime peel"),
+    "borneol": ("🍊", "orange peel"),
+    "terpineol": ("🍊", "citrus peel"),
+    "alpha-bisabolol": ("🍎", "apple"),
+    "ocimene": ("🥭", "mango"),
+    "limonene": ("🍋", "lemon peel"),
+    "1, 8, cineole": ("🍊", "orange peel"),
+    "bornyl acetate": ("🍍", "pineapple / pine-like fruit aroma"),
+    "p-cymene": ("🍊", "orange peel"),
+    "perillyl alcohol": ("🍋", "citrus peel"),
+    "sabinene": ("🍊", "citrus peel"),
+    "alpha-terpinene": ("🍋", "lemon peel"),
+    "gamma-terpinene": ("🍋", "lemon peel"),
+    "r-carvone": ("🍊", "orange peel"),
+    "s-carvone": ("🍊", "orange peel"),
+}
 
 
 @dataclass(frozen=True)
@@ -550,9 +577,24 @@ def compact_count(value: str) -> str:
     count = parse_count(value)
     if count is None or count < 0:
         return value
-    if count >= 10000:
-        return f"{count // 1000}k"
+    if count >= 1000:
+        return f"{round(count / 1000)}k"
     return str(count)
+
+
+def normalize_terpene_label(value: str) -> str:
+    return (
+        value.strip()
+        .strip('"')
+        .lower()
+        .replace("α", "alpha")
+        .replace("β", "beta")
+        .replace("γ", "gamma")
+    )
+
+
+def terpene_glyph(value: str) -> tuple[str, str]:
+    return TERPENE_GLYPHS.get(normalize_terpene_label(value), ("🌿", "botanical source"))
 
 
 def compute_heat_bounds(rows: List[List[str]], headers: List[str], start_col: int = 3) -> tuple[int, int]:
@@ -888,14 +930,14 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         summary: Optional[str] = None,
     ) -> str:
         count_value = parse_count(value)
-        display_value = "" if count_value is not None else compact_count(value)
+        display_value = compact_count(value)
         if value in NON_RESULT_VALUES or not value:
             return "<td></td>"
         if value.startswith("ERROR:"):
             return f"<td class=\"error\">{value}</td>"
         cell_style = ""
         link_style = ""
-        cell_class = ""
+        cell_classes = ["count-cell"]
         summary_text = summary
         is_highlight = False
         if is_heat_cell and row_idx is not None and col is not None:
@@ -910,37 +952,55 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
                 else:
                     summary_text = f"{count:,} hits for query: {query}"
         if is_highlight and summary_text:
-            cell_class = " class=\"high-score\""
+            cell_classes.append("high-score")
         if is_heat_cell and has_heat_values:
             if count_value is not None:
                 style, text_color = heatstyle(count_value, heat_min, heat_max)
                 if style:
                     cell_style = f" style=\"{style}\""
                     link_style = f" style=\"color:{text_color}\""
+        cell_class = f" class=\"{' '.join(cell_classes)}\""
         if not link:
             if summary_text:
                 return f"<td{cell_class} title=\"{htmllib.escape(summary_text)}\"{cell_style}>{display_value}</td>"
-            return f"<td{cell_style}{cell_class}>{display_value}</td>"
+            return f"<td{cell_class}{cell_style}>{display_value}</td>"
         if summary_text:
             return f"<td{cell_class} title=\"{htmllib.escape(summary_text)}\"{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
-        return f"<td{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
+        return f"<td{cell_class}{cell_style}><a href=\"{link}\" target=\"_blank\" rel=\"noopener noreferrer\"{link_style}>{display_value}</a></td>"
 
     row_terms = list(enumerate(rows[2:], start=2))
     # headers[0] is blank; headers[2] holds the first query modifier.
     term_headers = [h for h in headers[3:] if h]
     html_headers = ["", ""]
     html_headers.extend(term_headers)
-    column_count = max(len(html_headers), 1)
-    uniform_width = 100.0 / column_count
+    max_header_len = max((len(h) for h in term_headers), default=10)
+    max_row_label_len = max((len((row[0] if len(row) > 0 else "") or "compound-only") for _, row in row_terms), default=12)
+    header_height = min(max(132, max_header_len * 7 + 28), 240)
+    mobile_header_height = min(max(120, max_header_len * 6 + 24), 210)
+    axis_width = min(max(160, max_row_label_len * 8 + 34), 340)
+    mobile_axis_width = min(max(132, max_row_label_len * 7 + 28), 300)
+    count_cell_width = 54
+    mobile_count_cell_width = 46
     header_cells = [
         "<th class=\"count-col axis-header axis-term\"></th>",
-        "<th class=\"count-col\"></th>",
+        "<th class=\"count-col base-count-header\"></th>",
+    ]
+    glyph_cells = [
+        "<th class=\"count-col axis-header axis-term fruit-spacer\"></th>",
+        "<th class=\"count-col base-count-header fruit-spacer\"></th>",
     ]
     for header in html_headers[2:]:
         header_cells.append(
             "<th class=\"rotate\"><span class=\"angle\">{}</span></th>".format(htmllib.escape(header))
         )
-    header_row = f"<tr>{''.join(header_cells)}</tr>"
+        glyph, glyph_title = terpene_glyph(header)
+        glyph_cells.append(
+            "<th class=\"fruit-glyph-cell\" title=\"{}\"><span>{}</span></th>".format(
+                htmllib.escape(glyph_title),
+                htmllib.escape(glyph),
+            )
+        )
+    header_row = f"<tr>{''.join(header_cells)}</tr><tr class=\"fruit-glyph-row\">{''.join(glyph_cells)}</tr>"
 
     body_rows = []
     for data_index, row in row_terms:
@@ -952,7 +1012,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         row_term = term or "compound-only"
         row_label = term or ""
         cells = []
-        cells.append(f"<td class=\"axis-term\">{row_label}</td>")
+        cells.append(f"<td class=\"axis-term\">{htmllib.escape(row_label)}</td>")
 
         base_col = row[2] if len(row) > 2 else ""
         if is_compound_only_row:
@@ -1017,22 +1077,28 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       body {{ font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 1rem; }}
       .container {{ max-width: 100%; overflow: hidden; }}
       .heat-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.25rem; }}
-      .heat-table {{ border-collapse: collapse; width: 100%; min-width: 1020px; table-layout: fixed; font-size: 14px; }}
-      th, td {{ border: 1px solid #ddd; padding: 4px 6px; text-align: left; white-space: nowrap; width: {uniform_width:.4f}%; max-width: {uniform_width:.4f}%; }}
+      .heat-table {{ border-collapse: collapse; width: max-content; min-width: 100%; table-layout: fixed; font-size: 14px; }}
+      th, td {{ border: 1px solid #ddd; box-sizing: border-box; padding: 4px 6px; text-align: center; white-space: nowrap; width: {count_cell_width}px; min-width: {count_cell_width}px; max-width: {count_cell_width}px; }}
       th {{ background: #f5f5f5; position: sticky; top: 0; }}
-      th.rotate {{ height: 160px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; }}
+      th.rotate {{ height: {header_height}px; text-align: left; white-space: nowrap; padding: 0; overflow: visible; vertical-align: bottom; }}
       th.rotate .angle {{
         display: inline-block;
         transform: rotate(-90deg);
-        transform-origin: center center;
-        position: relative;
-        left: 0.1rem;
-        top: 4.9rem;
+        transform-origin: left bottom;
+        position: absolute;
+        left: 0.65rem;
+        bottom: 0.5rem;
         font-size: 11px;
         line-height: 1;
       }}
+      .count-cell {{ font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; }}
+      .count-cell a {{ display: block; }}
       .count-col {{ text-align: center; }}
-      .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; }}
+      .fruit-glyph-row th {{ height: 34px; padding: 2px 0; vertical-align: middle; }}
+      .fruit-glyph-cell span {{ display: block; font-size: 20px; line-height: 1; }}
+      .fruit-spacer {{ background: #fff; }}
+      .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; text-align: left; width: {axis_width}px; min-width: {axis_width}px; max-width: {axis_width}px; }}
+      .base-count-header, tbody td:nth-child(2) {{ left: {axis_width}px; }}
       .axis-term a {{ display: inline; }}
       .heat-legend {{ color: #444; font-size: 12px; margin-bottom: .5rem; }}
       .error {{ color: #b91c1c; }}
@@ -1042,11 +1108,11 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       .summary-heading {{ font-weight: 600; margin: 0 0 .35rem; }}
       @media (max-width: 960px) {{
         body {{ margin: 0.75rem; }}
-        .heat-table {{ min-width: 900px; font-size: 12px; }}
+        .heat-table {{ font-size: 12px; }}
         th, td {{ padding: 4px 5px; }}
         .heat-legend {{ font-size: 11px; }}
-        th.rotate {{ height: 144px; }}
-        th.rotate .angle {{ left: 0; top: 4.2rem; font-size: 10px; }}
+        th.rotate {{ height: {mobile_header_height}px; }}
+        th.rotate .angle {{ left: 0.55rem; bottom: 0.45rem; font-size: 10px; }}
       }}
       @media (max-width: 640px) {{
         body {{ margin: 0.5rem; }}
@@ -1054,14 +1120,16 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         .heat-legend {{ font-size: 10px; }}
         .high-score-list {{ max-height: 110px; }}
         p, .high-score-list, .footer, .heat-legend {{ font-size: 11px; }}
-        .heat-table {{ min-width: 840px; }}
-        th.rotate {{ height: 132px; white-space: nowrap; }}
+        th, td {{ width: {mobile_count_cell_width}px; min-width: {mobile_count_cell_width}px; max-width: {mobile_count_cell_width}px; }}
+        .axis-term {{ width: {mobile_axis_width}px; min-width: {mobile_axis_width}px; max-width: {mobile_axis_width}px; }}
+        .base-count-header, tbody td:nth-child(2) {{ left: {mobile_axis_width}px; }}
+        th.rotate {{ height: {mobile_header_height}px; white-space: nowrap; }}
         th.rotate .angle {{
           transform: rotate(-90deg);
-          transform-origin: center center;
-          position: relative;
-          left: 0;
-          top: 3.75rem;
+          transform-origin: left bottom;
+          position: absolute;
+          left: 0.5rem;
+          bottom: 0.4rem;
           display: inline-block;
           padding: 0;
           font-size: 9px;
