@@ -40,32 +40,32 @@ HEATMAP_HIGH_COLOR = (15, 56, 149)  # strong indigo
 
 PLACEHOLDER_VALUES = {"", "Loading...", "loading"}
 NON_RESULT_VALUES = {"#N/A", "N/A", "-", "NA"}
-TERPENE_GLYPHS = {
+TERPENE_PLANT_GLYPHS = {
     "alpha-pinene": ("🫐", "blueberry"),
-    "beta-pinene": ("🍋", "lemon peel"),
-    "humulene": ("🍈", "guava"),
+    "beta-pinene": ("🍐", "pear / citrus peel"),
+    "humulene": ("🍈", "guava / melon"),
     "beta-caryophyllene": ("🌶️", "pepper fruit"),
-    "caryophyllene oxide": ("🌶️", "pepper fruit"),
+    "caryophyllene oxide": ("🫑", "sweet pepper fruit"),
     "beta-myrcene": ("🥭", "mango"),
     "nerolidol": ("🍊", "orange blossom / citrus peel"),
     "linalool": ("🍇", "grape"),
     "terpinolene": ("🍎", "apple"),
     "phytol terpene": ("🥝", "kiwi / green fruit"),
-    "fenchol": ("🍋", "lime peel"),
-    "borneol": ("🍊", "orange peel"),
-    "terpineol": ("🍊", "citrus peel"),
-    "alpha-bisabolol": ("🍎", "apple"),
-    "ocimene": ("🥭", "mango"),
+    "fenchol": ("🥒", "cucumber / fennel-like botanicals"),
+    "borneol": ("🍑", "stone fruit / camphoraceous botanicals"),
+    "terpineol": ("🍒", "cherry / citrus blossom"),
+    "alpha-bisabolol": ("🍏", "green apple / chamomile"),
+    "ocimene": ("🍌", "tropical fruit"),
     "limonene": ("🍋", "lemon peel"),
-    "1, 8, cineole": ("🍊", "orange peel"),
+    "1, 8, cineole": ("🫒", "olive / eucalyptus-like botanicals"),
     "bornyl acetate": ("🍍", "pineapple / pine-like fruit aroma"),
-    "p-cymene": ("🍊", "orange peel"),
-    "perillyl alcohol": ("🍋", "citrus peel"),
-    "sabinene": ("🍊", "citrus peel"),
-    "alpha-terpinene": ("🍋", "lemon peel"),
-    "gamma-terpinene": ("🍋", "lemon peel"),
-    "r-carvone": ("🍊", "orange peel"),
-    "s-carvone": ("🍊", "orange peel"),
+    "p-cymene": ("🍅", "tomato / citrus peel"),
+    "perillyl alcohol": ("🍓", "berry / perilla-like botanicals"),
+    "sabinene": ("🥕", "carrot seed / spice botanicals"),
+    "alpha-terpinene": ("🥥", "coconut / tea tree-like botanicals"),
+    "gamma-terpinene": ("🍉", "melon / citrus peel"),
+    "r-carvone": ("🥑", "avocado / mint-family botanicals"),
+    "s-carvone": ("🫚", "ginger / caraway-family botanicals"),
 }
 
 
@@ -594,7 +594,7 @@ def normalize_terpene_label(value: str) -> str:
 
 
 def terpene_glyph(value: str) -> tuple[str, str]:
-    return TERPENE_GLYPHS.get(normalize_terpene_label(value), ("🌿", "botanical source"))
+    return TERPENE_PLANT_GLYPHS.get(normalize_terpene_label(value), ("🌿", "plant source"))
 
 
 def compute_heat_bounds(rows: List[List[str]], headers: List[str], start_col: int = 3) -> tuple[int, int]:
@@ -986,21 +986,22 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         "<th class=\"count-col base-count-header\"></th>",
     ]
     glyph_cells = [
-        "<th class=\"count-col axis-header axis-term fruit-spacer\"></th>",
-        "<th class=\"count-col base-count-header fruit-spacer\"></th>",
+        "<th class=\"count-col axis-header axis-term plant-spacer\"></th>",
+        "<th class=\"count-col base-count-header plant-spacer\"></th>",
     ]
     for header in html_headers[2:]:
         header_cells.append(
             "<th class=\"rotate\"><span class=\"angle\">{}</span></th>".format(htmllib.escape(header))
         )
         glyph, glyph_title = terpene_glyph(header)
+        plant_title = f"{header.strip().strip('\"')}: {glyph_title}"
         glyph_cells.append(
-            "<th class=\"fruit-glyph-cell\" title=\"{}\"><span>{}</span></th>".format(
-                htmllib.escape(glyph_title),
+            "<th class=\"plant-glyph-cell\" title=\"{}\"><span>{}</span></th>".format(
+                htmllib.escape(plant_title),
                 htmllib.escape(glyph),
             )
         )
-    header_row = f"<tr>{''.join(header_cells)}</tr><tr class=\"fruit-glyph-row\">{''.join(glyph_cells)}</tr>"
+    header_row = f"<tr>{''.join(header_cells)}</tr><tr class=\"plant-glyph-row\">{''.join(glyph_cells)}</tr>"
 
     body_rows = []
     for data_index, row in row_terms:
@@ -1086,7 +1087,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         transform: rotate(-90deg);
         transform-origin: left bottom;
         position: absolute;
-        left: 0.65rem;
+        left: 50%;
         bottom: 0.5rem;
         font-size: 11px;
         line-height: 1;
@@ -1094,9 +1095,9 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       .count-cell {{ font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; }}
       .count-cell a {{ display: block; }}
       .count-col {{ text-align: center; }}
-      .fruit-glyph-row th {{ height: 34px; padding: 2px 0; vertical-align: middle; }}
-      .fruit-glyph-cell span {{ display: block; font-size: 20px; line-height: 1; }}
-      .fruit-spacer {{ background: #fff; }}
+      .plant-glyph-row th {{ height: 34px; padding: 2px 0; vertical-align: middle; }}
+      .plant-glyph-cell span {{ display: block; font-size: 20px; line-height: 1; }}
+      .plant-spacer {{ background: #fff; }}
       .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; text-align: left; width: {axis_width}px; min-width: {axis_width}px; max-width: {axis_width}px; }}
       .base-count-header, tbody td:nth-child(2) {{ left: {axis_width}px; }}
       .axis-term a {{ display: inline; }}
@@ -1112,7 +1113,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         th, td {{ padding: 4px 5px; }}
         .heat-legend {{ font-size: 11px; }}
         th.rotate {{ height: {mobile_header_height}px; }}
-        th.rotate .angle {{ left: 0.55rem; bottom: 0.45rem; font-size: 10px; }}
+        th.rotate .angle {{ left: 50%; bottom: 0.45rem; font-size: 10px; }}
       }}
       @media (max-width: 640px) {{
         body {{ margin: 0.5rem; }}
@@ -1128,7 +1129,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
           transform: rotate(-90deg);
           transform-origin: left bottom;
           position: absolute;
-          left: 0.5rem;
+          left: 50%;
           bottom: 0.4rem;
           display: inline-block;
           padding: 0;
