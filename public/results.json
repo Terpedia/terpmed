@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-03T17:45:43+00:00",
+  "generated_at": "2026-07-04T05:58:39+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "158",
+      "base": "159",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -819,7 +819,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1373,7 +1373,7 @@
         },
         {
           "column": "fenchol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anorectic\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1923,7 +1923,7 @@
     },
     {
       "term": "anti-coagulant",
-      "base": "0",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -1943,7 +1943,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"anti-coagulant\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "3",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -3061,7 +3061,7 @@
         },
         {
           "column": "linalool",
-          "value": "12",
+          "value": "#N/A",
           "query": "\"anti-microbial\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4063,7 +4063,7 @@
     },
     {
       "term": "anti-proliferative",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -5561,7 +5561,7 @@
     },
     {
       "term": "brain ischemia",
-      "base": "4",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -6421,7 +6421,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "2906",
+          "value": "2907",
           "query": "\"gastric protection\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8301,7 +8301,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"neuro-inflammation\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9417,7 +9417,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1870",
+          "value": "1871",
           "query": "\"promotes apoptosis in cancer cells\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22promotes+apoptosis+in+cancer+cells%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -10269,7 +10269,7 @@
     },
     {
       "term": "skin health",
-      "base": "8",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
@@ -11553,7 +11553,7 @@
     },
     {
       "term": "diabetes",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -14087,7 +14087,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"ALS\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ALS%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15267,7 +15267,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Incontinence\"[All Fields] AND \"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Incontinence%22%5BAll+Fields%5D+AND+%22terpinolene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
