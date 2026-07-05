@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-04T05:58:39+00:00",
+  "generated_at": "2026-07-05T06:23:33+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "159",
+      "base": "157",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -215,7 +215,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "66981",
+          "value": "67072",
           "query": "\"anti-inflammatory\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D",
           "source": "kept",
@@ -425,7 +425,7 @@
     },
     {
       "term": "absorption",
-      "base": "7",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -605,7 +605,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "22",
+          "value": "23",
           "query": "\"absorption\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22absorption%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1293,7 +1293,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anorectic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1923,7 +1923,7 @@
     },
     {
       "term": "anti-coagulant",
-      "base": "1",
+      "base": "0",
       "cells": [
         {
           "column": "term-only",
@@ -1943,7 +1943,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"anti-coagulant\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2569,7 +2569,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "13953",
+          "value": "13954",
           "query": "\"anti-epileptic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -3061,7 +3061,7 @@
         },
         {
           "column": "linalool",
-          "value": "#N/A",
+          "value": "12",
           "query": "\"anti-microbial\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4063,7 +4063,7 @@
     },
     {
       "term": "anti-proliferative",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -4987,7 +4987,7 @@
         },
         {
           "column": "linalool",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-toxin\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-toxin%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6417,11 +6417,11 @@
     },
     {
       "term": "gastric protection",
-      "base": "9",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
-          "value": "2907",
+          "value": "2908",
           "query": "\"gastric protection\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6795,7 +6795,7 @@
         },
         {
           "column": "perillyl alcohol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"hyper-pigmentation\"[All Fields] AND \"perillyl alcohol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22hyper-pigmentation%22%5BAll+Fields%5D+AND+%22perillyl+alcohol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8515,7 +8515,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"neurological health\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8745,7 +8745,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "11",
+          "value": "#N/A",
           "query": "\"neuroprotective\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9413,7 +9413,7 @@
     },
     {
       "term": "promotes apoptosis in cancer cells",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -10885,7 +10885,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "11",
+          "value": "#N/A",
           "query": "\"neuroprotective\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11771,7 +11771,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "10096",
+          "value": "10097",
           "query": "\"Hepatitis C\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hepatitis+C%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13907,7 +13907,7 @@
     },
     {
       "term": "ALS",
-      "base": "1",
+      "base": "0",
       "cells": [
         {
           "column": "term-only",
@@ -15619,7 +15619,7 @@
     },
     {
       "term": "arthritis",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
