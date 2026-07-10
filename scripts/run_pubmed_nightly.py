@@ -1266,6 +1266,119 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
 """
 
     (public_dir / "index.html").write_text(html, encoding="utf-8")
+    card_header_cells = [
+        '<th class="card-label-spacer" colspan="2"></th>',
+    ]
+    card_plant_cells = [
+        '<th class="card-label-spacer" colspan="2"></th>',
+    ]
+    for header in html_headers[2:]:
+        glyph, glyph_title = terpene_glyph(header)
+        card_header_cells.append(
+            '<th class="card-terpene" title="{}"><span>{}</span></th>'.format(
+                htmllib.escape(header),
+                htmllib.escape(header),
+            )
+        )
+        card_plant_cells.append(
+            '<th class="card-plant" title="{}">{}</th>'.format(
+                htmllib.escape(f"{header}: {glyph_title}"),
+                htmllib.escape(glyph),
+            )
+        )
+
+    card_body_rows = []
+    for data_index, row in row_terms:
+        term = row[0] if len(row) > 0 else ""
+        is_compound_only_row = data_index == 2 and not term
+        if not term and not is_compound_only_row:
+            continue
+        row_term = term or "compound-only"
+        glyph, glyph_title = row_glyph(row_term)
+        card_cells = [
+            '<td class="card-disease" title="{}">{}</td>'.format(
+                htmllib.escape(glyph_title),
+                htmllib.escape(glyph),
+            ),
+            '<td class="card-disease-name" title="{}"></td>'.format(
+                htmllib.escape(term or "compound-only")
+            ),
+        ]
+        for col in range(3, len(headers)):
+            header = headers[col]
+            if not header:
+                continue
+            value = row[col] if col < len(row) else ""
+            query = build_compound_only_query(header) if is_compound_only_row else build_query(row_term, header)
+            count_value = parse_count(value)
+            style = ""
+            if count_value is not None and has_heat_values:
+                heat_style, _ = heatstyle(count_value, heat_min, heat_max)
+                if heat_style:
+                    style = f' style="{heat_style}"'
+            cell_title = f"{row_term} x {header}: {compact_count(value) or 'no result'}"
+            card_cells.append(
+                '<td class="card-heat{}"{} title="{}"><a href="{}" target="_blank" rel="noopener noreferrer"></a></td>'.format(
+                    " card-empty" if count_value is None else "",
+                    style,
+                    htmllib.escape(cell_title),
+                    make_pubmed_url(query),
+                )
+            )
+        card_body_rows.append(f"<tr>{''.join(card_cells)}</tr>")
+
+    card_html = f"""<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TerpMed Index Card</title>
+    <style>
+      :root {{ color-scheme: light; }}
+      * {{ box-sizing: border-box; }}
+      html, body {{ margin: 0; min-height: 100%; background: #eef1f5; }}
+      body {{ display: grid; place-items: start center; padding: 1rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: #111827; }}
+      .card {{ width: min(5in, calc(100vw - 2rem)); aspect-ratio: 5 / 3; overflow: hidden; background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 8px 24px rgba(15, 23, 42, .12); }}
+      .card-title {{ height: 9%; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5%; border-bottom: 1px solid #cbd5e1; font-size: clamp(7px, 1.2vw, 10px); font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }}
+      .card-title span {{ color: #64748b; font-weight: 500; letter-spacing: 0; text-transform: none; }}
+      .card-wrap {{ height: 91%; overflow: hidden; }}
+      table {{ width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }}
+      th, td {{ border-right: 1px solid rgba(148, 163, 184, .26); border-bottom: 1px solid rgba(148, 163, 184, .24); padding: 0; text-align: center; }}
+      thead th {{ background: #f8fafc; }}
+      .card-label-spacer {{ width: 9%; }}
+      .card-terpene {{ height: 31%; vertical-align: bottom; overflow: hidden; font-size: clamp(4px, .8vw, 6px); font-weight: 700; line-height: 1; }}
+      .card-terpene span {{ display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); max-height: 100%; overflow: hidden; }}
+      .card-plant {{ height: 7%; font-size: clamp(6px, 1.15vw, 9px); line-height: 1; }}
+      .card-disease {{ width: 4.5%; font-size: clamp(6px, 1.1vw, 9px); line-height: 1; }}
+      .card-disease-name {{ width: 4.5%; }}
+      .card-heat {{ height: auto; background: #f8fafc; }}
+      .card-heat a {{ display: block; width: 100%; height: 100%; min-height: 1px; }}
+      .card-empty {{ background: #f8fafc !important; }}
+      @media print {{
+        @page {{ size: 5in 3in; margin: 0; }}
+        html, body {{ background: #fff; }}
+        body {{ padding: 0; }}
+        .card {{ width: 5in; height: 3in; border: 0; box-shadow: none; }}
+      }}
+    </style>
+  </head>
+  <body>
+    <main class="card" aria-label="TerpMed compact heat map">
+      <div class="card-title">TerpMed <span>PubMed evidence heat map</span></div>
+      <div class="card-wrap">
+        <table>
+          <thead>
+            <tr>{''.join(card_header_cells)}</tr>
+            <tr>{''.join(card_plant_cells)}</tr>
+          </thead>
+          <tbody>{''.join(card_body_rows)}</tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
+"""
+    (public_dir / "index-card.html").write_text(card_html, encoding="utf-8")
     (public_dir / "README.md").write_text(
         "# Terpene PubMed Search\n\nThis repository is updated nightly by GitHub Actions.\n",
         encoding="utf-8",
