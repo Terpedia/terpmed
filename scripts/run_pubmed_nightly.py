@@ -67,6 +67,82 @@ TERPENE_PLANT_GLYPHS = {
     "r-carvone": ("🥑", "avocado / mint-family botanicals"),
     "s-carvone": ("🫚", "ginger / caraway-family botanicals"),
 }
+ROW_GLYPHS = {
+    "compound-only": ("◼", "compound-only axis"),
+    "anti-inflammatory": ("🔥", "inflammation"),
+    "absorption": ("🧽", "absorption"),
+    "alcohol craving reduction": ("🍷", "alcohol craving reduction"),
+    "alertness": ("⏰", "alertness"),
+    "analgesic": ("💊", "pain relief"),
+    "anorectic": ("🍽️", "appetite modulation"),
+    "anti-anxiety": ("🧘", "anxiety"),
+    "anti-bacterial": ("🦠", "bacteria"),
+    "anti-coagulant": ("🩸", "coagulation"),
+    "anti-convulsant": ("⚡", "convulsions"),
+    "anti-depressant": ("☀️", "depression"),
+    "anti-epileptic": ("⚡", "epilepsy"),
+    "anti-fungal": ("🍄", "fungus"),
+    "anti-microbial": ("🧫", "microbes"),
+    "anti-mutagenic": ("🧬", "mutation"),
+    "anti-nociceptive": ("🧯", "nociception"),
+    "anti-oxidant": ("🛡️", "oxidative stress"),
+    "anti-parastitic": ("🪱", "parasites"),
+    "anti-proliferative": ("📉", "cell proliferation"),
+    "anti-psychotic": ("🧠", "psychosis"),
+    "anti-septic": ("🧼", "antiseptic"),
+    "anti-spasmodic": ("〰️", "spasm"),
+    "anti-toxin": ("☣️", "toxins"),
+    "anti-tumor": ("🎗️", "tumor"),
+    "anti-viral": ("🛡️", "virus"),
+    "brain ischemia": ("🧠", "brain ischemia"),
+    "bronchodialator": ("🫁", "bronchodilation"),
+    "cardiovascular health": ("❤️", "cardiovascular health"),
+    "decongestant": ("👃", "decongestant"),
+    "gastric protection": ("🛡️", "gastric protection"),
+    "hyper-pigmentation": ("🎨", "hyper-pigmentation"),
+    "immuno-stimulatory": ("🛡️", "immune stimulation"),
+    "interleukin-b secretion": ("📣", "interleukin-B secretion"),
+    "longevity": ("⌛", "longevity"),
+    "lowers blood-brain barrier": ("🚧", "blood-brain barrier"),
+    "memory retention": ("🧩", "memory retention"),
+    "natural humectant": ("💧", "humectant"),
+    "neuro-inflammation": ("🔥", "neuro-inflammation"),
+    "neurological health": ("🧠", "neurological health"),
+    "neuroprotective": ("🧠", "neuroprotection"),
+    "oral health": ("🦷", "oral health"),
+    "pharmacokinetic": ("📈", "pharmacokinetics"),
+    "prohibits neurotransmitter degeneration": ("🔒", "neurotransmitter degeneration"),
+    "promotes apoptosis in cancer cells": ("🎯", "apoptosis in cancer cells"),
+    "relax": ("🧘", "relaxation"),
+    "respiratory function": ("🫁", "respiratory function"),
+    "sedative, sleep": ("🌙", "sedative / sleep"),
+    "skin health": ("✨", "skin health"),
+    "anti-cancer": ("🎗️", "cancer"),
+    "mrsa": ("🦠", "MRSA"),
+    "osteoporosis": ("🦴", "osteoporosis"),
+    "pruritis": ("🤏", "pruritis"),
+    "diabetes": ("🩸", "diabetes"),
+    "hepatitis c": ("🧬", "hepatitis C"),
+    "dystonia": ("〰️", "dystonia"),
+    "fibromyalgia": ("💢", "fibromyalgia"),
+    "parkinson's disease": ("🤲", "Parkinson's disease"),
+    "alzheimers": ("🧠", "Alzheimer's"),
+    "epilepsy": ("⚡", "epilepsy"),
+    "ptsd": ("🧠", "PTSD"),
+    "migraine": ("🤕", "migraine"),
+    "huntington's disease": ("🧬", "Huntington's disease"),
+    "multiple sclerosis": ("🧠", "multiple sclerosis"),
+    "als": ("🦾", "ALS"),
+    "tourettes syndrom": ("💬", "Tourette syndrome"),
+    "hiv": ("🛡️", "HIV"),
+    "hypertension": ("🫀", "hypertension"),
+    "sleep apnea": ("😴", "sleep apnea"),
+    "gi disorders": ("🫃", "GI disorders"),
+    "incontinence": ("🚻", "incontinence"),
+    "arthritis": ("🦴", "arthritis"),
+    "chronic pain": ("💢", "chronic pain"),
+    "restless leg syndrome": ("🦵", "restless leg syndrome"),
+}
 
 
 @dataclass(frozen=True)
@@ -597,6 +673,11 @@ def terpene_glyph(value: str) -> tuple[str, str]:
     return TERPENE_PLANT_GLYPHS.get(normalize_terpene_label(value), ("🌿", "plant source"))
 
 
+def row_glyph(value: str) -> tuple[str, str]:
+    label = _strip_and_normalize_term(value).lower()
+    return ROW_GLYPHS.get(label, ("•", value or "compound-only"))
+
+
 def compute_heat_bounds(rows: List[List[str]], headers: List[str], start_col: int = 3) -> tuple[int, int]:
     values: List[int] = []
     for row in rows:
@@ -981,12 +1062,18 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     mobile_axis_width = min(max(132, max_row_label_len * 7 + 28), 300)
     count_cell_width = 54
     mobile_count_cell_width = 46
+    row_glyph_width = 42
+    mobile_row_glyph_width = 38
+    base_count_left = axis_width + row_glyph_width
+    mobile_base_count_left = mobile_axis_width + mobile_row_glyph_width
     header_cells = [
         "<th class=\"count-col axis-header axis-term\"></th>",
+        "<th class=\"row-glyph-header\"></th>",
         "<th class=\"count-col base-count-header\"></th>",
     ]
     glyph_cells = [
         "<th class=\"count-col axis-header axis-term plant-spacer\"></th>",
+        "<th class=\"row-glyph-header plant-spacer\"></th>",
         "<th class=\"count-col base-count-header plant-spacer\"></th>",
     ]
     for header in html_headers[2:]:
@@ -1012,8 +1099,15 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
 
         row_term = term or "compound-only"
         row_label = term or ""
+        glyph, glyph_title = row_glyph(row_term)
         cells = []
         cells.append(f"<td class=\"axis-term\">{htmllib.escape(row_label)}</td>")
+        cells.append(
+            "<td class=\"row-glyph-cell\" title=\"{}\"><span>{}</span></td>".format(
+                htmllib.escape(glyph_title),
+                htmllib.escape(glyph),
+            )
+        )
 
         base_col = row[2] if len(row) > 2 else ""
         if is_compound_only_row:
@@ -1098,8 +1192,10 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       .plant-glyph-row th {{ height: 34px; padding: 2px 0; vertical-align: middle; }}
       .plant-glyph-cell span {{ display: block; font-size: 20px; line-height: 1; }}
       .plant-spacer {{ background: #fff; }}
-      .axis-term {{ position: sticky; left: 0; z-index: 2; background: #fff; white-space: normal; text-align: left; width: {axis_width}px; min-width: {axis_width}px; max-width: {axis_width}px; }}
-      .base-count-header, tbody td:nth-child(2) {{ left: {axis_width}px; }}
+      .axis-term {{ position: sticky; left: 0; z-index: 4; background: #fff; white-space: normal; text-align: left; width: {axis_width}px; min-width: {axis_width}px; max-width: {axis_width}px; }}
+      .row-glyph-header, .row-glyph-cell {{ position: sticky; left: {axis_width}px; z-index: 3; background: #fff; width: {row_glyph_width}px; min-width: {row_glyph_width}px; max-width: {row_glyph_width}px; padding: 2px 0; text-align: center; }}
+      .row-glyph-cell span {{ display: block; font-size: 18px; line-height: 1; }}
+      .base-count-header, tbody td:nth-child(3) {{ position: sticky; left: {base_count_left}px; z-index: 2; }}
       .axis-term a {{ display: inline; }}
       .heat-legend {{ color: #444; font-size: 12px; margin-bottom: .5rem; }}
       .error {{ color: #b91c1c; }}
@@ -1123,7 +1219,9 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
         p, .high-score-list, .footer, .heat-legend {{ font-size: 11px; }}
         th, td {{ width: {mobile_count_cell_width}px; min-width: {mobile_count_cell_width}px; max-width: {mobile_count_cell_width}px; }}
         .axis-term {{ width: {mobile_axis_width}px; min-width: {mobile_axis_width}px; max-width: {mobile_axis_width}px; }}
-        .base-count-header, tbody td:nth-child(2) {{ left: {mobile_axis_width}px; }}
+        .row-glyph-header, .row-glyph-cell {{ left: {mobile_axis_width}px; width: {mobile_row_glyph_width}px; min-width: {mobile_row_glyph_width}px; max-width: {mobile_row_glyph_width}px; }}
+        .row-glyph-cell span {{ font-size: 17px; }}
+        .base-count-header, tbody td:nth-child(3) {{ left: {mobile_base_count_left}px; }}
         th.rotate {{ height: {mobile_header_height}px; white-space: nowrap; }}
         th.rotate .angle {{
           transform: rotate(-90deg);
