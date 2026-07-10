@@ -68,19 +68,19 @@ TERPENE_PLANT_GLYPHS = {
     "s-carvone": ("🫚", "caraway / dill"),
 }
 ROW_GLYPHS = {
-    "compound-only": ("◼", "compound-only axis"),
+    "compound-only": ("🚫", "compound-only axis"),
     "anti-inflammatory": ("🔥", "inflammation"),
     "absorption": ("🧽", "absorption"),
     "alcohol craving reduction": ("🍷", "alcohol craving reduction"),
     "alertness": ("⏰", "alertness"),
     "analgesic": ("💊", "pain relief"),
     "anorectic": ("🍽️", "appetite modulation"),
-    "anti-anxiety": ("🧘", "anxiety"),
+    "anti-anxiety": ("😰", "anxiety"),
     "anti-bacterial": ("🦠", "bacteria"),
     "anti-coagulant": ("🩸", "coagulation"),
     "anti-convulsant": ("⚡", "convulsions"),
     "anti-depressant": ("☀️", "depression"),
-    "anti-epileptic": ("⚡", "epilepsy"),
+    "anti-epileptic": ("🧿", "epilepsy"),
     "anti-fungal": ("🍄", "fungus"),
     "anti-microbial": ("🧫", "microbes"),
     "anti-mutagenic": ("🧬", "mutation"),
@@ -93,54 +93,54 @@ ROW_GLYPHS = {
     "anti-spasmodic": ("〰️", "spasm"),
     "anti-toxin": ("☣️", "toxins"),
     "anti-tumor": ("🎗️", "tumor"),
-    "anti-viral": ("🛡️", "virus"),
-    "brain ischemia": ("🧠", "brain ischemia"),
-    "bronchodialator": ("🫁", "bronchodilation"),
+    "anti-viral": ("🦟", "virus"),
+    "brain ischemia": ("🧊", "brain ischemia"),
+    "bronchodialator": ("🌬️", "bronchodilation"),
     "cardiovascular health": ("❤️", "cardiovascular health"),
     "decongestant": ("👃", "decongestant"),
-    "gastric protection": ("🛡️", "gastric protection"),
+    "gastric protection": ("🫙", "gastric protection"),
     "hyper-pigmentation": ("🎨", "hyper-pigmentation"),
-    "immuno-stimulatory": ("🛡️", "immune stimulation"),
+    "immuno-stimulatory": ("🫶", "immune stimulation"),
     "interleukin-b secretion": ("📣", "interleukin-B secretion"),
     "longevity": ("⌛", "longevity"),
     "lowers blood-brain barrier": ("🚧", "blood-brain barrier"),
     "memory retention": ("🧩", "memory retention"),
     "natural humectant": ("💧", "humectant"),
-    "neuro-inflammation": ("🔥", "neuro-inflammation"),
-    "neurological health": ("🧠", "neurological health"),
-    "neuroprotective": ("🧠", "neuroprotection"),
+    "neuro-inflammation": ("🌡️", "neuro-inflammation"),
+    "neurological health": ("🧭", "neurological health"),
+    "neuroprotective": ("🛟", "neuroprotection"),
     "oral health": ("🦷", "oral health"),
     "pharmacokinetic": ("📈", "pharmacokinetics"),
     "prohibits neurotransmitter degeneration": ("🔒", "neurotransmitter degeneration"),
     "promotes apoptosis in cancer cells": ("🎯", "apoptosis in cancer cells"),
-    "relax": ("🧘", "relaxation"),
-    "respiratory function": ("🫁", "respiratory function"),
+    "relax": ("🪷", "relaxation"),
+    "respiratory function": ("🫧", "respiratory function"),
     "sedative, sleep": ("🌙", "sedative / sleep"),
     "skin health": ("✨", "skin health"),
-    "anti-cancer": ("🎗️", "cancer"),
-    "mrsa": ("🦠", "MRSA"),
-    "osteoporosis": ("🦴", "osteoporosis"),
+    "anti-cancer": ("🏥", "cancer"),
+    "mrsa": ("🧪", "MRSA"),
+    "osteoporosis": ("🪵", "osteoporosis"),
     "pruritis": ("🤏", "pruritis"),
-    "diabetes": ("🩸", "diabetes"),
-    "hepatitis c": ("🧬", "hepatitis C"),
-    "dystonia": ("〰️", "dystonia"),
-    "fibromyalgia": ("💢", "fibromyalgia"),
+    "diabetes": ("🍬", "diabetes"),
+    "hepatitis c": ("🧴", "hepatitis C"),
+    "dystonia": ("🪩", "dystonia"),
+    "fibromyalgia": ("🫥", "fibromyalgia"),
     "parkinson's disease": ("🤲", "Parkinson's disease"),
-    "alzheimers": ("🧠", "Alzheimer's"),
-    "epilepsy": ("⚡", "epilepsy"),
-    "ptsd": ("🧠", "PTSD"),
+    "alzheimers": ("🧓", "Alzheimer's"),
+    "epilepsy": ("🌀", "epilepsy"),
+    "ptsd": ("🫨", "PTSD"),
     "migraine": ("🤕", "migraine"),
-    "huntington's disease": ("🧬", "Huntington's disease"),
-    "multiple sclerosis": ("🧠", "multiple sclerosis"),
+    "huntington's disease": ("🧩", "Huntington's disease"),
+    "multiple sclerosis": ("🧵", "multiple sclerosis"),
     "als": ("🦾", "ALS"),
     "tourettes syndrom": ("💬", "Tourette syndrome"),
-    "hiv": ("🛡️", "HIV"),
+    "hiv": ("🧷", "HIV"),
     "hypertension": ("🫀", "hypertension"),
     "sleep apnea": ("😴", "sleep apnea"),
     "gi disorders": ("🫃", "GI disorders"),
     "incontinence": ("🚻", "incontinence"),
-    "arthritis": ("🦴", "arthritis"),
-    "chronic pain": ("💢", "chronic pain"),
+    "arthritis": ("🖐️", "arthritis"),
+    "chronic pain": ("🩹", "chronic pain"),
     "restless leg syndrome": ("🦵", "restless leg syndrome"),
 }
 
@@ -1267,10 +1267,10 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
 
     (public_dir / "index.html").write_text(html, encoding="utf-8")
     card_header_cells = [
-        '<th class="card-label-spacer" colspan="2"></th>',
+        '<th class="card-label-spacer"></th>',
     ]
     card_plant_cells = [
-        '<th class="card-label-spacer" colspan="2"></th>',
+        '<th class="card-label-spacer"></th>',
     ]
     for header in html_headers[2:]:
         glyph, glyph_title = terpene_glyph(header)
@@ -1291,7 +1291,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
     for data_index, row in row_terms:
         term = row[0] if len(row) > 0 else ""
         is_compound_only_row = data_index == 2 and not term
-        if not term and not is_compound_only_row:
+        if is_compound_only_row or not term:
             continue
         row_term = term or "compound-only"
         glyph, glyph_title = row_glyph(row_term)
@@ -1299,9 +1299,6 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
             '<td class="card-disease" title="{}">{}</td>'.format(
                 htmllib.escape(glyph_title),
                 htmllib.escape(glyph),
-            ),
-            '<td class="card-disease-name" title="{}"></td>'.format(
-                htmllib.escape(term or "compound-only")
             ),
         ]
         for col in range(3, len(headers)):
@@ -1338,27 +1335,27 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
       * {{ box-sizing: border-box; }}
       html, body {{ margin: 0; min-height: 100%; background: #eef1f5; }}
       body {{ display: grid; place-items: start center; padding: 1rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: #111827; }}
-      .card {{ width: min(5in, calc(100vw - 2rem)); aspect-ratio: 5 / 3; overflow: hidden; background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 8px 24px rgba(15, 23, 42, .12); }}
-      .card-title {{ height: 9%; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5%; border-bottom: 1px solid #cbd5e1; font-size: clamp(7px, 1.2vw, 10px); font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }}
+      .card {{ width: min(3in, calc(100vw - 2rem)); aspect-ratio: 3 / 5; overflow: hidden; background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 8px 24px rgba(15, 23, 42, .12); }}
+      .card-title {{ height: 6%; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5%; border-bottom: 1px solid #cbd5e1; font-size: clamp(6px, 1vw, 8px); font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }}
       .card-title span {{ color: #64748b; font-weight: 500; letter-spacing: 0; text-transform: none; }}
       .card-wrap {{ height: 91%; overflow: hidden; }}
       table {{ width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }}
       th, td {{ border-right: 1px solid rgba(148, 163, 184, .26); border-bottom: 1px solid rgba(148, 163, 184, .24); padding: 0; text-align: center; }}
       thead th {{ background: #f8fafc; }}
       .card-label-spacer {{ width: 9%; }}
-      .card-terpene {{ height: 31%; vertical-align: bottom; overflow: hidden; font-size: clamp(4px, .8vw, 6px); font-weight: 700; line-height: 1; }}
+      .card-terpene {{ height: 25%; vertical-align: bottom; overflow: hidden; font-size: clamp(3px, .6vw, 5px); font-weight: 700; line-height: 1; }}
       .card-terpene span {{ display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); max-height: 100%; overflow: hidden; }}
-      .card-plant {{ height: 7%; font-size: clamp(6px, 1.15vw, 9px); line-height: 1; }}
-      .card-disease {{ width: 4.5%; font-size: clamp(6px, 1.1vw, 9px); line-height: 1; }}
+      .card-plant {{ height: 5%; font-size: clamp(4px, .8vw, 6px); line-height: 1; }}
+      .card-disease {{ width: 4.5%; font-size: clamp(4px, .8vw, 6px); line-height: 1; }}
       .card-disease-name {{ width: 4.5%; }}
       .card-heat {{ height: auto; background: #f8fafc; }}
       .card-heat a {{ display: block; width: 100%; height: 100%; min-height: 1px; }}
       .card-empty {{ background: #f8fafc !important; }}
       @media print {{
-        @page {{ size: 5in 3in; margin: 0; }}
+        @page {{ size: 3in 5in; margin: 0; }}
         html, body {{ background: #fff; }}
         body {{ padding: 0; }}
-        .card {{ width: 5in; height: 3in; border: 0; box-shadow: none; }}
+        .card {{ width: 3in; height: 5in; border: 0; box-shadow: none; }}
       }}
     </style>
   </head>
