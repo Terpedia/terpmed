@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-11T05:25:27+00:00",
+  "generated_at": "2026-07-12T05:41:17+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "158",
+      "base": "156",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61142",
+          "value": "61146",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1397,7 +1397,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anorectic\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "3",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -2625,7 +2625,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "#N/A",
+          "value": "3",
           "query": "\"anti-epileptic\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3363,7 +3363,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-mutagenic\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3719,7 +3719,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "1965",
+          "value": "1966",
           "query": "\"anti-oxidant\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4987,7 +4987,7 @@
         },
         {
           "column": "linalool",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-toxin\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-toxin%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7071,7 +7071,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"interleukin-B secretion\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22interleukin-B+secretion%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8141,7 +8141,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neuro-inflammation\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "7",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -10055,7 +10055,7 @@
     },
     {
       "term": "sedative, sleep",
-      "base": "4",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -10155,7 +10155,7 @@
         },
         {
           "column": "borneol",
-          "value": "3",
+          "value": "#N/A",
           "query": "\"sedative, sleep\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12195,7 +12195,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -12279,7 +12279,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"Fibromyalgia\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -14729,7 +14729,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "5",
+          "value": "#N/A",
           "query": "\"Hypertension\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hypertension%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14775,7 +14775,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"Sleep apnea\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sleep+apnea%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16047,7 +16047,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -16131,7 +16131,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"Fibromyalgia\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "9",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
