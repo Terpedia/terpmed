@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T05:13:02+00:00",
+  "generated_at": "2026-07-15T05:13:20+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
@@ -185,7 +185,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "1277",
+          "value": "1278",
           "query": "\"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -215,7 +215,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "67089",
+          "value": "67157",
           "query": "\"anti-inflammatory\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D",
           "source": "kept",
@@ -319,7 +319,7 @@
         },
         {
           "column": "terpineol",
-          "value": "147",
+          "value": "148",
           "query": "\"anti-inflammatory\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61155",
+          "value": "61159",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2047,7 +2047,7 @@
         },
         {
           "column": "ocimene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-coagulant\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "3",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -2779,7 +2779,7 @@
     },
     {
       "term": "anti-fungal",
-      "base": "0",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "3",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -4063,7 +4063,7 @@
     },
     {
       "term": "anti-proliferative",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -5561,7 +5561,7 @@
     },
     {
       "term": "brain ischemia",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -5597,7 +5597,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "24",
+          "value": "#N/A",
           "query": "\"brain ischemia\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22brain+ischemia%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6421,7 +6421,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "2908",
+          "value": "2909",
           "query": "\"gastric protection\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6795,7 +6795,7 @@
         },
         {
           "column": "perillyl alcohol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"hyper-pigmentation\"[All Fields] AND \"perillyl alcohol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22hyper-pigmentation%22%5BAll+Fields%5D+AND+%22perillyl+alcohol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "6",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
