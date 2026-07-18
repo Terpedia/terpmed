@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-17T05:25:59+00:00",
+  "generated_at": "2026-07-18T05:08:06+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "157",
+      "base": "158",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1082",
+          "value": "#N/A",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -819,7 +819,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2047,7 +2047,7 @@
         },
         {
           "column": "ocimene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-coagulant\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2149,7 +2149,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"anti-convulsant\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-convulsant%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2325,7 +2325,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-convulsant\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-convulsant%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -2633,7 +2633,7 @@
         },
         {
           "column": "linalool",
-          "value": "#N/A",
+          "value": "39",
           "query": "\"anti-epileptic\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4987,7 +4987,7 @@
         },
         {
           "column": "linalool",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-toxin\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-toxin%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8301,7 +8301,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neuro-inflammation\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10687,7 +10687,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-cancer\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12195,7 +12195,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -12279,7 +12279,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"Fibromyalgia\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16047,7 +16047,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -16131,7 +16131,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"Fibromyalgia\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
