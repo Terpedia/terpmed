@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-22T05:33:05+00:00",
+  "generated_at": "2026-07-23T05:38:25+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "155",
+      "base": "248",
       "cells": [
         {
           "column": "alpha-pinene",
-          "value": "4441",
+          "value": "4461",
           "query": "\"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -17,7 +17,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "2179",
+          "value": "2184",
           "query": "\"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22beta-pinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -33,7 +33,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "4205",
+          "value": "4206",
           "query": "\"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -49,7 +49,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "750",
+          "value": "754",
           "query": "\"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -65,7 +65,7 @@
         },
         {
           "column": "linalool",
-          "value": "5009",
+          "value": "5041",
           "query": "\"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22linalool%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -73,7 +73,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "522",
+          "value": "523",
           "query": "\"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22terpinolene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -105,7 +105,7 @@
         },
         {
           "column": "terpineol",
-          "value": "1664",
+          "value": "1665",
           "query": "\"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22terpineol%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1083",
+          "value": "1084",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -129,7 +129,7 @@
         },
         {
           "column": "limonene",
-          "value": "6622",
+          "value": "6650",
           "query": "\"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22limonene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -137,7 +137,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "3435",
+          "value": "3436",
           "query": "\"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -177,7 +177,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1500",
+          "value": "1502",
           "query": "\"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -185,7 +185,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "1281",
+          "value": "1283",
           "query": "\"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -211,11 +211,11 @@
     },
     {
       "term": "anti-inflammatory",
-      "base": "6",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
-          "value": "67229",
+          "value": "67242",
           "query": "\"anti-inflammatory\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D",
           "source": "kept",
@@ -231,7 +231,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "118",
+          "value": "177",
           "query": "\"anti-inflammatory\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -239,7 +239,7 @@
         },
         {
           "column": "humulene",
-          "value": "94",
+          "value": "197",
           "query": "\"anti-inflammatory\"[All Fields] AND \"humulene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22humulene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -247,7 +247,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "1209",
+          "value": "1210",
           "query": "\"anti-inflammatory\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -351,7 +351,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "401",
+          "value": "404",
           "query": "\"anti-inflammatory\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -367,7 +367,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "98",
+          "value": "134",
           "query": "\"anti-inflammatory\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -383,7 +383,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "60",
+          "value": "84",
           "query": "\"anti-inflammatory\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -407,7 +407,7 @@
         },
         {
           "column": "R-carvone",
-          "value": "5",
+          "value": "6",
           "query": "\"anti-inflammatory\"[All Fields] AND \"R-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-inflammatory%22%5BAll+Fields%5D+AND+%22R-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -425,7 +425,7 @@
     },
     {
       "term": "absorption",
-      "base": "6",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -493,7 +493,7 @@
         },
         {
           "column": "linalool",
-          "value": "57",
+          "value": "58",
           "query": "\"absorption\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22absorption%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -533,7 +533,7 @@
         },
         {
           "column": "terpineol",
-          "value": "47",
+          "value": "49",
           "query": "\"absorption\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22absorption%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -565,7 +565,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "49",
+          "value": "101",
           "query": "\"absorption\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22absorption%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -853,7 +853,7 @@
     },
     {
       "term": "alertness",
-      "base": "3",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -889,7 +889,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "3",
           "query": "\"alertness\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alertness%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -977,7 +977,7 @@
         },
         {
           "column": "ocimene",
-          "value": "0",
+          "value": "1",
           "query": "\"alertness\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alertness%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1041,7 +1041,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "0",
+          "value": "1",
           "query": "\"alertness\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alertness%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1067,11 +1067,11 @@
     },
     {
       "term": "analgesic",
-      "base": "2",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
-          "value": "61199",
+          "value": "61214",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1079,7 +1079,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "49",
+          "value": "165",
           "query": "\"analgesic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1103,7 +1103,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "72",
+          "value": "1007",
           "query": "\"analgesic\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1111,7 +1111,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "24",
+          "value": "128",
           "query": "\"analgesic\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1119,7 +1119,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "20",
+          "value": "53",
           "query": "\"analgesic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1135,7 +1135,7 @@
         },
         {
           "column": "linalool",
-          "value": "55",
+          "value": "181",
           "query": "\"analgesic\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1151,7 +1151,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "517",
+          "value": "518",
           "query": "\"analgesic\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1159,7 +1159,7 @@
         },
         {
           "column": "fenchol",
-          "value": "2",
+          "value": "3",
           "query": "\"analgesic\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1167,7 +1167,7 @@
         },
         {
           "column": "borneol",
-          "value": "45",
+          "value": "120",
           "query": "\"analgesic\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1191,7 +1191,7 @@
         },
         {
           "column": "ocimene",
-          "value": "4",
+          "value": "37",
           "query": "\"analgesic\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1239,7 +1239,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "12",
+          "value": "34",
           "query": "\"analgesic\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1285,7 +1285,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "3621",
+          "value": "1107",
           "query": "\"anorectic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1477,7 +1477,7 @@
         },
         {
           "column": "R-carvone",
-          "value": "0",
+          "value": "1",
           "query": "\"anorectic\"[All Fields] AND \"R-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22R-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1495,11 +1495,11 @@
     },
     {
       "term": "anti-anxiety",
-      "base": "8",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
-          "value": "21259",
+          "value": "1824",
           "query": "\"anti-anxiety\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-anxiety%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1709,7 +1709,7 @@
     },
     {
       "term": "anti-bacterial",
-      "base": "4",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -1745,7 +1745,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "178",
+          "value": "354",
           "query": "\"anti-bacterial\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-bacterial%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1777,7 +1777,7 @@
         },
         {
           "column": "linalool",
-          "value": "256",
+          "value": "262",
           "query": "\"anti-bacterial\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-bacterial%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1809,7 +1809,7 @@
         },
         {
           "column": "borneol",
-          "value": "123",
+          "value": "127",
           "query": "\"anti-bacterial\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-bacterial%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1833,7 +1833,7 @@
         },
         {
           "column": "ocimene",
-          "value": "42",
+          "value": "45",
           "query": "\"anti-bacterial\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-bacterial%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1849,7 +1849,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "295",
+          "value": "296",
           "query": "\"anti-bacterial\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-bacterial%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1923,7 +1923,7 @@
     },
     {
       "term": "anti-coagulant",
-      "base": "0",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -1943,7 +1943,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"anti-coagulant\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "3",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -2531,7 +2531,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-depressant\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-depressant%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2569,7 +2569,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "13977",
+          "value": "13978",
           "query": "\"anti-epileptic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2737,7 +2737,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "0",
+          "value": "3",
           "query": "\"anti-epileptic\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2779,7 +2779,7 @@
     },
     {
       "term": "anti-fungal",
-      "base": "0",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -2879,7 +2879,7 @@
         },
         {
           "column": "borneol",
-          "value": "0",
+          "value": "1",
           "query": "\"anti-fungal\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-fungal%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "3",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -3029,7 +3029,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "5",
+          "value": "11",
           "query": "\"anti-microbial\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3173,7 +3173,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1",
+          "value": "6",
           "query": "\"anti-microbial\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3635,7 +3635,7 @@
     },
     {
       "term": "anti-oxidant",
-      "base": "7",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -3647,7 +3647,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "11",
+          "value": "454",
           "query": "\"anti-oxidant\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3727,7 +3727,7 @@
         },
         {
           "column": "fenchol",
-          "value": "0",
+          "value": "8",
           "query": "\"anti-oxidant\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3759,7 +3759,7 @@
         },
         {
           "column": "ocimene",
-          "value": "80",
+          "value": "81",
           "query": "\"anti-oxidant\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3791,7 +3791,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "13",
+          "value": "239",
           "query": "\"anti-oxidant\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3823,7 +3823,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "4",
+          "value": "206",
           "query": "\"anti-oxidant\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3849,7 +3849,7 @@
     },
     {
       "term": "anti-parastitic",
-      "base": "4",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -3861,7 +3861,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "0",
+          "value": "4461",
           "query": "\"anti-parastitic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3877,7 +3877,7 @@
         },
         {
           "column": "humulene",
-          "value": "905",
+          "value": "906",
           "query": "\"anti-parastitic\"[All Fields] AND \"humulene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22humulene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3901,7 +3901,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "750",
+          "value": "754",
           "query": "\"anti-parastitic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3917,7 +3917,7 @@
         },
         {
           "column": "linalool",
-          "value": "5040",
+          "value": "5041",
           "query": "\"anti-parastitic\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3925,7 +3925,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "0",
+          "value": "523",
           "query": "\"anti-parastitic\"[All Fields] AND \"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22terpinolene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3957,7 +3957,7 @@
         },
         {
           "column": "terpineol",
-          "value": "0",
+          "value": "1665",
           "query": "\"anti-parastitic\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3965,7 +3965,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "615",
+          "value": "616",
           "query": "\"anti-parastitic\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3981,7 +3981,7 @@
         },
         {
           "column": "limonene",
-          "value": "0",
+          "value": "6650",
           "query": "\"anti-parastitic\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3989,7 +3989,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "3435",
+          "value": "3436",
           "query": "\"anti-parastitic\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4029,7 +4029,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1500",
+          "value": "1502",
           "query": "\"anti-parastitic\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4037,7 +4037,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "1271",
+          "value": "1283",
           "query": "\"anti-parastitic\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4053,7 +4053,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "121",
           "query": "\"anti-parastitic\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4063,11 +4063,11 @@
     },
     {
       "term": "anti-proliferative",
-      "base": "5",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
-          "value": "17040",
+          "value": "1386",
           "query": "\"anti-proliferative\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-proliferative%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4179,7 +4179,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "5",
+          "value": "7",
           "query": "\"anti-proliferative\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-proliferative%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4705,7 +4705,7 @@
     },
     {
       "term": "anti-spasmodic",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -4797,7 +4797,7 @@
         },
         {
           "column": "fenchol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-spasmodic\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-spasmodic%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4923,7 +4923,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "403",
+          "value": "30",
           "query": "\"anti-toxin\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-toxin%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5133,11 +5133,11 @@
     },
     {
       "term": "anti-tumor",
-      "base": "8",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
-          "value": "66098",
+          "value": "4223",
           "query": "\"anti-tumor\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-tumor%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5201,7 +5201,7 @@
         },
         {
           "column": "linalool",
-          "value": "5",
+          "value": "7",
           "query": "\"anti-tumor\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-tumor%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5265,7 +5265,7 @@
         },
         {
           "column": "limonene",
-          "value": "12",
+          "value": "14",
           "query": "\"anti-tumor\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-tumor%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5347,7 +5347,7 @@
     },
     {
       "term": "anti-viral",
-      "base": "1",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
@@ -5561,7 +5561,7 @@
     },
     {
       "term": "brain ischemia",
-      "base": "4",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
@@ -5573,7 +5573,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "3",
+          "value": "5",
           "query": "\"brain ischemia\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22brain+ischemia%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5613,7 +5613,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "#N/A",
+          "value": "3",
           "query": "\"brain ischemia\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22brain+ischemia%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5693,7 +5693,7 @@
         },
         {
           "column": "limonene",
-          "value": "1",
+          "value": "2",
           "query": "\"brain ischemia\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22brain+ischemia%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5989,7 +5989,7 @@
     },
     {
       "term": "cardiovascular health",
-      "base": "5",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -6001,7 +6001,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "1",
+          "value": "14",
           "query": "\"cardiovascular health\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22cardiovascular+health%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6009,7 +6009,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "0",
+          "value": "6",
           "query": "\"cardiovascular health\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22cardiovascular+health%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6049,7 +6049,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "0",
+          "value": "3",
           "query": "\"cardiovascular health\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22cardiovascular+health%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6129,7 +6129,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "1",
+          "value": "11",
           "query": "\"cardiovascular health\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22cardiovascular+health%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6177,7 +6177,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "1",
+          "value": "7",
           "query": "\"cardiovascular health\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22cardiovascular+health%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6203,7 +6203,7 @@
     },
     {
       "term": "decongestant",
-      "base": "5",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
@@ -6223,7 +6223,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "1",
+          "value": "2",
           "query": "\"decongestant\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22decongestant%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6335,7 +6335,7 @@
         },
         {
           "column": "limonene",
-          "value": "0",
+          "value": "5",
           "query": "\"decongestant\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22decongestant%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6359,7 +6359,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"decongestant\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22decongestant%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6417,7 +6417,7 @@
     },
     {
       "term": "gastric protection",
-      "base": "10",
+      "base": "14",
       "cells": [
         {
           "column": "term-only",
@@ -6461,7 +6461,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "0",
+          "value": "7",
           "query": "\"gastric protection\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6517,7 +6517,7 @@
         },
         {
           "column": "borneol",
-          "value": "0",
+          "value": "4",
           "query": "\"gastric protection\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6541,7 +6541,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1",
+          "value": "3",
           "query": "\"gastric protection\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6549,7 +6549,7 @@
         },
         {
           "column": "limonene",
-          "value": "1",
+          "value": "25",
           "query": "\"gastric protection\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -6635,7 +6635,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "188",
+          "value": "18",
           "query": "\"hyper-pigmentation\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22hyper-pigmentation%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7273,11 +7273,11 @@
     },
     {
       "term": "longevity",
-      "base": "8",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
-          "value": "76083",
+          "value": "5889",
           "query": "\"longevity\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22longevity%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7357,7 +7357,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "28",
+          "value": "29",
           "query": "\"longevity\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22longevity%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7413,7 +7413,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "3",
+          "value": "4",
           "query": "\"longevity\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22longevity%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7453,7 +7453,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1",
+          "value": "5",
           "query": "\"longevity\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22longevity%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7555,7 +7555,7 @@
         },
         {
           "column": "linalool",
-          "value": "0",
+          "value": "1",
           "query": "\"lowers blood-brain barrier\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22lowers+blood-brain+barrier%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7603,7 +7603,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "0",
+          "value": "1",
           "query": "\"lowers blood-brain barrier\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22lowers+blood-brain+barrier%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7705,7 +7705,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "2506",
+          "value": "1363",
           "query": "\"memory retention\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22memory+retention%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7721,7 +7721,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "0",
+          "value": "1",
           "query": "\"memory retention\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22memory+retention%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -7919,7 +7919,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "0",
+          "value": "20",
           "query": "\"natural humectant\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22natural+humectant%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8133,7 +8133,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1816",
+          "value": "117",
           "query": "\"neuro-inflammation\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8343,11 +8343,11 @@
     },
     {
       "term": "neurological health",
-      "base": "1",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
-          "value": "756",
+          "value": "14990",
           "query": "\"neurological health\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8355,7 +8355,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "0",
+          "value": "4",
           "query": "\"neurological health\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8379,7 +8379,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "12",
           "query": "\"neurological health\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8411,7 +8411,7 @@
         },
         {
           "column": "linalool",
-          "value": "2",
+          "value": "7",
           "query": "\"neurological health\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8427,7 +8427,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "0",
+          "value": "42",
           "query": "\"neurological health\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8459,7 +8459,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neurological health\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8523,7 +8523,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"neurological health\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8557,7 +8557,7 @@
     },
     {
       "term": "neuroprotective",
-      "base": "5",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -8673,7 +8673,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "15",
+          "value": "18",
           "query": "\"neuroprotective\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8697,7 +8697,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "26",
+          "value": "34",
           "query": "\"neuroprotective\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8737,7 +8737,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "2",
+          "value": "13",
           "query": "\"neuroprotective\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8771,11 +8771,11 @@
     },
     {
       "term": "oral health",
-      "base": "4",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
-          "value": "85831",
+          "value": "35374",
           "query": "\"oral health\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8799,7 +8799,7 @@
         },
         {
           "column": "humulene",
-          "value": "2",
+          "value": "5",
           "query": "\"oral health\"[All Fields] AND \"humulene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22humulene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8839,7 +8839,7 @@
         },
         {
           "column": "linalool",
-          "value": "1",
+          "value": "27",
           "query": "\"oral health\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8871,7 +8871,7 @@
         },
         {
           "column": "borneol",
-          "value": "0",
+          "value": "12",
           "query": "\"oral health\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8879,7 +8879,7 @@
         },
         {
           "column": "terpineol",
-          "value": "1",
+          "value": "5",
           "query": "\"oral health\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8887,7 +8887,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "0",
+          "value": "4",
           "query": "\"oral health\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8919,7 +8919,7 @@
         },
         {
           "column": "bornyl acetate",
-          "value": "0",
+          "value": "1",
           "query": "\"oral health\"[All Fields] AND \"bornyl acetate\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22oral+health%22%5BAll+Fields%5D+AND+%22bornyl+acetate%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "7",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -9021,7 +9021,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "29",
+          "value": "82",
           "query": "\"pharmacokinetic\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9029,7 +9029,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "13",
+          "value": "31",
           "query": "\"pharmacokinetic\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9101,7 +9101,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "3",
+          "value": "25",
           "query": "\"pharmacokinetic\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9117,7 +9117,7 @@
         },
         {
           "column": "limonene",
-          "value": "367",
+          "value": "372",
           "query": "\"pharmacokinetic\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9133,7 +9133,7 @@
         },
         {
           "column": "bornyl acetate",
-          "value": "2",
+          "value": "8",
           "query": "\"pharmacokinetic\"[All Fields] AND \"bornyl acetate\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22bornyl+acetate%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9141,7 +9141,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "17",
+          "value": "69",
           "query": "\"pharmacokinetic\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9165,7 +9165,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "5",
+          "value": "39",
           "query": "\"pharmacokinetic\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22pharmacokinetic%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9413,7 +9413,7 @@
     },
     {
       "term": "promotes apoptosis in cancer cells",
-      "base": "6",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
@@ -9449,7 +9449,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "10",
           "query": "\"promotes apoptosis in cancer cells\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22promotes+apoptosis+in+cancer+cells%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9577,7 +9577,7 @@
         },
         {
           "column": "perillyl alcohol",
-          "value": "0",
+          "value": "3",
           "query": "\"promotes apoptosis in cancer cells\"[All Fields] AND \"perillyl alcohol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22promotes+apoptosis+in+cancer+cells%22%5BAll+Fields%5D+AND+%22perillyl+alcohol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9627,11 +9627,11 @@
     },
     {
       "term": "relax",
-      "base": "5",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
-          "value": "9260",
+          "value": "18204",
           "query": "\"relax\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9647,7 +9647,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "0",
+          "value": "13",
           "query": "\"relax\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9679,7 +9679,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "0",
+          "value": "1",
           "query": "\"relax\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9703,7 +9703,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "0",
+          "value": "2",
           "query": "\"relax\"[All Fields] AND \"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D+AND+%22terpinolene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9799,7 +9799,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "0",
+          "value": "4",
           "query": "\"relax\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9807,7 +9807,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "0",
+          "value": "14",
           "query": "\"relax\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22relax%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,11 +9841,11 @@
     },
     {
       "term": "respiratory function",
-      "base": "6",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
-          "value": "65264",
+          "value": "44836",
           "query": "\"respiratory function\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22respiratory+function%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9853,7 +9853,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "7",
+          "value": "34",
           "query": "\"respiratory function\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22respiratory+function%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9949,7 +9949,7 @@
         },
         {
           "column": "terpineol",
-          "value": "1",
+          "value": "5",
           "query": "\"respiratory function\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22respiratory+function%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9965,7 +9965,7 @@
         },
         {
           "column": "ocimene",
-          "value": "0",
+          "value": "4",
           "query": "\"respiratory function\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22respiratory+function%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10013,7 +10013,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "0",
+          "value": "4",
           "query": "\"respiratory function\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22respiratory+function%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10055,7 +10055,7 @@
     },
     {
       "term": "sedative, sleep",
-      "base": "4",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -10083,7 +10083,7 @@
         },
         {
           "column": "humulene",
-          "value": "0",
+          "value": "1",
           "query": "\"sedative, sleep\"[All Fields] AND \"humulene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22humulene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10091,7 +10091,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "7",
           "query": "\"sedative, sleep\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10099,7 +10099,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "0",
+          "value": "3",
           "query": "\"sedative, sleep\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10203,7 +10203,7 @@
         },
         {
           "column": "bornyl acetate",
-          "value": "0",
+          "value": "2",
           "query": "\"sedative, sleep\"[All Fields] AND \"bornyl acetate\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22bornyl+acetate%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10211,7 +10211,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "0",
+          "value": "4",
           "query": "\"sedative, sleep\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10235,7 +10235,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "0",
+          "value": "1",
           "query": "\"sedative, sleep\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22sedative%2C+sleep%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10269,11 +10269,11 @@
     },
     {
       "term": "skin health",
-      "base": "7",
+      "base": "12",
       "cells": [
         {
           "column": "term-only",
-          "value": "15607",
+          "value": "15614",
           "query": "\"skin health\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10281,7 +10281,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "2",
+          "value": "23",
           "query": "\"skin health\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10313,7 +10313,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "0",
+          "value": "5",
           "query": "\"skin health\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10353,7 +10353,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "2",
+          "value": "31",
           "query": "\"skin health\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10361,7 +10361,7 @@
         },
         {
           "column": "fenchol",
-          "value": "0",
+          "value": "1",
           "query": "\"skin health\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10385,7 +10385,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "0",
+          "value": "7",
           "query": "\"skin health\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22skin+health%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10483,7 +10483,7 @@
     },
     {
       "term": "anti-cancer",
-      "base": "11",
+      "base": "12",
       "cells": [
         {
           "column": "term-only",
@@ -10663,7 +10663,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1",
+          "value": "10",
           "query": "\"anti-cancer\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10697,7 +10697,7 @@
     },
     {
       "term": "neuroprotective",
-      "base": "5",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -10813,7 +10813,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "15",
+          "value": "18",
           "query": "\"neuroprotective\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10837,7 +10837,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "26",
+          "value": "34",
           "query": "\"neuroprotective\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10877,7 +10877,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "2",
+          "value": "13",
           "query": "\"neuroprotective\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuroprotective%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10911,7 +10911,7 @@
     },
     {
       "term": "MRSA",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -10995,7 +10995,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "14",
+          "value": "27",
           "query": "\"MRSA\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22MRSA%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11059,7 +11059,7 @@
         },
         {
           "column": "bornyl acetate",
-          "value": "4",
+          "value": "5",
           "query": "\"MRSA\"[All Fields] AND \"bornyl acetate\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22MRSA%22%5BAll+Fields%5D+AND+%22bornyl+acetate%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11067,7 +11067,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "21",
+          "value": "26",
           "query": "\"MRSA\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22MRSA%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11125,7 +11125,7 @@
     },
     {
       "term": "Osteoporosis",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -11339,11 +11339,11 @@
     },
     {
       "term": "Pruritis",
-      "base": "4",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
-          "value": "733",
+          "value": "2982",
           "query": "\"Pruritis\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Pruritis%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11391,7 +11391,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "0",
+          "value": "1",
           "query": "\"Pruritis\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Pruritis%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11407,7 +11407,7 @@
         },
         {
           "column": "linalool",
-          "value": "0",
+          "value": "4",
           "query": "\"Pruritis\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Pruritis%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11553,11 +11553,11 @@
     },
     {
       "term": "diabetes",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
-          "value": "1028386",
+          "value": "111438",
           "query": "\"diabetes\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22diabetes%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11621,7 +11621,7 @@
         },
         {
           "column": "linalool",
-          "value": "36",
+          "value": "51",
           "query": "\"diabetes\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22diabetes%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11645,7 +11645,7 @@
         },
         {
           "column": "fenchol",
-          "value": "0",
+          "value": "1",
           "query": "\"diabetes\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22diabetes%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11741,7 +11741,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "11",
+          "value": "13",
           "query": "\"diabetes\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22diabetes%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12195,7 +12195,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -12327,7 +12327,7 @@
         },
         {
           "column": "limonene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"Fibromyalgia\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12367,7 +12367,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Fibromyalgia\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12409,11 +12409,11 @@
     },
     {
       "term": "Parkinson's disease",
-      "base": "0",
+      "base": "2",
       "cells": [
         {
           "column": "term-only",
-          "value": "137295",
+          "value": "9915",
           "query": "\"Parkinson's disease\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Parkinson%27s+disease%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12445,7 +12445,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "11",
+          "value": "16",
           "query": "\"Parkinson's disease\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Parkinson%27s+disease%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12493,7 +12493,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "21",
+          "value": "25",
           "query": "\"Parkinson's disease\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Parkinson%27s+disease%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12623,7 +12623,7 @@
     },
     {
       "term": "Alzheimers",
-      "base": "5",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -12723,7 +12723,7 @@
         },
         {
           "column": "borneol",
-          "value": "21",
+          "value": "26",
           "query": "\"Alzheimers\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Alzheimers%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12739,7 +12739,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "9",
+          "value": "10",
           "query": "\"Alzheimers\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Alzheimers%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12747,7 +12747,7 @@
         },
         {
           "column": "ocimene",
-          "value": "3",
+          "value": "5",
           "query": "\"Alzheimers\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Alzheimers%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12763,7 +12763,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "35",
+          "value": "36",
           "query": "\"Alzheimers\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Alzheimers%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12803,7 +12803,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1",
+          "value": "14",
           "query": "\"Alzheimers\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Alzheimers%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12837,11 +12837,11 @@
     },
     {
       "term": "Epilepsy",
-      "base": "6",
+      "base": "7",
       "cells": [
         {
           "column": "term-only",
-          "value": "14443",
+          "value": "14446",
           "query": "\"Epilepsy\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Epilepsy%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13017,7 +13017,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "0",
+          "value": "2",
           "query": "\"Epilepsy\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Epilepsy%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13405,7 +13405,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "2",
+          "value": "3",
           "query": "\"migraine\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22migraine%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13515,7 +13515,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "1",
           "query": "\"Huntington's disease\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Huntington%27s+disease%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13697,7 +13697,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "119319",
+          "value": "9664",
           "query": "\"multiple sclerosis\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22multiple+sclerosis%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14125,7 +14125,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1",
+          "value": "443",
           "query": "\"Tourettes Syndrom\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tourettes+Syndrom%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14205,7 +14205,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "0",
+          "value": "1",
           "query": "\"Tourettes Syndrom\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tourettes+Syndrom%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14221,7 +14221,7 @@
         },
         {
           "column": "borneol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Tourettes Syndrom\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tourettes+Syndrom%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14229,7 +14229,7 @@
         },
         {
           "column": "terpineol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"Tourettes Syndrom\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tourettes+Syndrom%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14335,11 +14335,11 @@
     },
     {
       "term": "HIV",
-      "base": "6",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
-          "value": "458798",
+          "value": "38951",
           "query": "\"HIV\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22HIV%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14435,7 +14435,7 @@
         },
         {
           "column": "borneol",
-          "value": "2",
+          "value": "4",
           "query": "\"HIV\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22HIV%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14549,7 +14549,7 @@
     },
     {
       "term": "Hypertension",
-      "base": "6",
+      "base": "8",
       "cells": [
         {
           "column": "term-only",
@@ -14561,7 +14561,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "9",
+          "value": "12",
           "query": "\"Hypertension\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hypertension%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14585,7 +14585,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "11",
+          "value": "15",
           "query": "\"Hypertension\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hypertension%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14705,7 +14705,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "5",
+          "value": "6",
           "query": "\"Hypertension\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hypertension%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14763,7 +14763,7 @@
     },
     {
       "term": "Sleep apnea",
-      "base": "0",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -14839,7 +14839,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"Sleep apnea\"[All Fields] AND \"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sleep+apnea%22%5BAll+Fields%5D+AND+%22terpinolene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14981,7 +14981,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1460",
+          "value": "3225",
           "query": "\"GI disorders\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15013,7 +15013,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "1",
           "query": "\"GI disorders\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15021,7 +15021,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "0",
+          "value": "1",
           "query": "\"GI disorders\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15037,7 +15037,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "0",
+          "value": "1",
           "query": "\"GI disorders\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15117,7 +15117,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "0",
+          "value": "2",
           "query": "\"GI disorders\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15125,7 +15125,7 @@
         },
         {
           "column": "bornyl acetate",
-          "value": "0",
+          "value": "1",
           "query": "\"GI disorders\"[All Fields] AND \"bornyl acetate\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22bornyl+acetate%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15133,7 +15133,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "0",
+          "value": "1",
           "query": "\"GI disorders\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15195,7 +15195,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "74715",
+          "value": "7265",
           "query": "\"Incontinence\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Incontinence%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15619,11 +15619,11 @@
     },
     {
       "term": "arthritis",
-      "base": "6",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
-          "value": "32529",
+          "value": "32533",
           "query": "\"arthritis\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22arthritis%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15663,7 +15663,7 @@
         },
         {
           "column": "caryophyllene oxide",
-          "value": "6",
+          "value": "7",
           "query": "\"arthritis\"[All Fields] AND \"caryophyllene oxide\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22arthritis%22%5BAll+Fields%5D+AND+%22caryophyllene+oxide%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15687,7 +15687,7 @@
         },
         {
           "column": "linalool",
-          "value": "9",
+          "value": "11",
           "query": "\"arthritis\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22arthritis%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15751,7 +15751,7 @@
         },
         {
           "column": "limonene",
-          "value": "16",
+          "value": "24",
           "query": "\"arthritis\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22arthritis%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15833,7 +15833,7 @@
     },
     {
       "term": "Osteoporosis",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -16047,7 +16047,7 @@
     },
     {
       "term": "Fibromyalgia",
-      "base": "2",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -16179,7 +16179,7 @@
         },
         {
           "column": "limonene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"Fibromyalgia\"[All Fields] AND \"limonene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22limonene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16219,7 +16219,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Fibromyalgia\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "8",
+      "base": "12",
       "cells": [
         {
           "column": "term-only",
@@ -16345,7 +16345,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "3",
+          "value": "21",
           "query": "\"chronic pain\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22chronic+pain%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16449,7 +16449,7 @@
         },
         {
           "column": "gamma-terpinene",
-          "value": "2",
+          "value": "3",
           "query": "\"chronic pain\"[All Fields] AND \"gamma-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22chronic+pain%22%5BAll+Fields%5D+AND+%22gamma-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
