@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-25T05:27:42+00:00",
+  "generated_at": "2026-07-26T05:44:44+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "270",
+      "base": "269",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -675,7 +675,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -707,7 +707,7 @@
         },
         {
           "column": "linalool",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "#N/A",
+          "value": "61232",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1293,7 +1293,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anorectic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2047,7 +2047,7 @@
         },
         {
           "column": "ocimene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-coagulant\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2333,7 +2333,7 @@
         },
         {
           "column": "R-carvone",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-convulsant\"[All Fields] AND \"R-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-convulsant%22%5BAll+Fields%5D+AND+%22R-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -2871,7 +2871,7 @@
         },
         {
           "column": "fenchol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-fungal\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-fungal%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3061,7 +3061,7 @@
         },
         {
           "column": "linalool",
-          "value": "#N/A",
+          "value": "12",
           "query": "\"anti-microbial\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3259,7 +3259,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-mutagenic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3635,7 +3635,7 @@
     },
     {
       "term": "anti-oxidant",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -3735,7 +3735,7 @@
         },
         {
           "column": "borneol",
-          "value": "#N/A",
+          "value": "188",
           "query": "\"anti-oxidant\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5439,7 +5439,7 @@
         },
         {
           "column": "fenchol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-viral\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-viral%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8459,7 +8459,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"neurological health\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "12",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -11339,7 +11339,7 @@
     },
     {
       "term": "Pruritis",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -11447,7 +11447,7 @@
         },
         {
           "column": "terpineol",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"Pruritis\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Pruritis%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11843,7 +11843,7 @@
         },
         {
           "column": "terpinolene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Hepatitis C\"[All Fields] AND \"terpinolene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hepatitis+C%22%5BAll+Fields%5D+AND+%22terpinolene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -12295,7 +12295,7 @@
         },
         {
           "column": "borneol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Fibromyalgia\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14087,7 +14087,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"ALS\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ALS%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15149,7 +15149,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"GI disorders\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16147,7 +16147,7 @@
         },
         {
           "column": "borneol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"Fibromyalgia\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Fibromyalgia%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "12",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -16479,7 +16479,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "#N/A",
+          "value": "614",
           "query": "\"restless leg syndrome\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22restless+leg+syndrome%22%5BAll+Fields%5D",
           "source": "kept",
