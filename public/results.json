@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-07T03:30:27+00:00",
+  "generated_at": "2026-08-08T03:03:17+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "269",
+      "base": "270",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -675,7 +675,7 @@
         },
         {
           "column": "\u03b2-caryophyllene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"\u03b2-caryophyllene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22%CE%B2-caryophyllene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61281",
+          "value": "61295",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1373,7 +1373,7 @@
         },
         {
           "column": "fenchol",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anorectic\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -3259,7 +3259,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-mutagenic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3719,7 +3719,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "1967",
+          "value": "1968",
           "query": "\"anti-oxidant\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-oxidant%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5407,7 +5407,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-viral\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-viral%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -9417,7 +9417,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1880",
+          "value": "1881",
           "query": "\"promotes apoptosis in cancer cells\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22promotes+apoptosis+in+cancer+cells%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "12",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -10687,7 +10687,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-cancer\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
