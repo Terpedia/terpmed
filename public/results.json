@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-09T03:08:11+00:00",
+  "generated_at": "2026-08-10T03:14:38+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "266",
+      "base": "265",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "#N/A",
+          "value": "1085",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -819,7 +819,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61300",
+          "value": "61304",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1271,7 +1271,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"analgesic\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1293,7 +1293,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anorectic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1923,7 +1923,7 @@
     },
     {
       "term": "anti-coagulant",
-      "base": "1",
+      "base": "0",
       "cells": [
         {
           "column": "term-only",
@@ -1943,7 +1943,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"anti-coagulant\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-coagulant%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -2689,7 +2689,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"anti-epileptic\"[All Fields] AND \"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-epileptic%22%5BAll+Fields%5D+AND+%22ocimene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2779,7 +2779,7 @@
     },
     {
       "term": "anti-fungal",
-      "base": "4",
+      "base": "3",
       "cells": [
         {
           "column": "term-only",
@@ -2871,7 +2871,7 @@
         },
         {
           "column": "fenchol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-fungal\"[All Fields] AND \"fenchol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-fungal%22%5BAll+Fields%5D+AND+%22fenchol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -3363,7 +3363,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-mutagenic\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -4063,7 +4063,7 @@
     },
     {
       "term": "anti-proliferative",
-      "base": "8",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -4163,7 +4163,7 @@
         },
         {
           "column": "borneol",
-          "value": "#N/A",
+          "value": "3",
           "query": "\"anti-proliferative\"[All Fields] AND \"borneol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-proliferative%22%5BAll+Fields%5D+AND+%22borneol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8301,7 +8301,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neuro-inflammation\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -10647,7 +10647,7 @@
         },
         {
           "column": "perillyl alcohol",
-          "value": "#N/A",
+          "value": "12",
           "query": "\"anti-cancer\"[All Fields] AND \"perillyl alcohol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22perillyl+alcohol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
