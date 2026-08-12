@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-11T03:10:22+00:00",
+  "generated_at": "2026-08-12T03:18:01+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "269",
+      "base": "268",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61310",
+          "value": "61311",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "3",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -3207,7 +3207,7 @@
     },
     {
       "term": "anti-mutagenic",
-      "base": "2",
+      "base": "1",
       "cells": [
         {
           "column": "term-only",
@@ -3259,7 +3259,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-mutagenic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3291,7 +3291,7 @@
         },
         {
           "column": "\"phytol terpene\"",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"anti-mutagenic\"[All Fields] AND \"\"phytol terpene\"\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22%22phytol+terpene%22%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3363,7 +3363,7 @@
         },
         {
           "column": "p-cymene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-mutagenic\"[All Fields] AND \"p-cymene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-mutagenic%22%5BAll+Fields%5D+AND+%22p-cymene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5407,7 +5407,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "#N/A",
+          "value": "1",
           "query": "\"anti-viral\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-viral%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8515,7 +8515,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"neurological health\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "11",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "12",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -10687,7 +10687,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-cancer\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11339,7 +11339,7 @@
     },
     {
       "term": "Pruritis",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
@@ -11447,7 +11447,7 @@
         },
         {
           "column": "terpineol",
-          "value": "#N/A",
+          "value": "2",
           "query": "\"Pruritis\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Pruritis%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14087,7 +14087,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"ALS\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ALS%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "12",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -16479,7 +16479,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "616",
+          "value": "617",
           "query": "\"restless leg syndrome\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22restless+leg+syndrome%22%5BAll+Fields%5D",
           "source": "kept",
