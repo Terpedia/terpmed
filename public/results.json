@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-14T03:18:24+00:00",
+  "generated_at": "2026-08-15T02:46:52+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "268",
+      "base": "270",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1085",
+          "value": "1086",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61325",
+          "value": "61335",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "4",
+      "base": "5",
       "cells": [
         {
           "column": "term-only",
@@ -2779,7 +2779,7 @@
     },
     {
       "term": "anti-fungal",
-      "base": "3",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -3877,7 +3877,7 @@
         },
         {
           "column": "humulene",
-          "value": "911",
+          "value": "913",
           "query": "\"anti-parastitic\"[All Fields] AND \"humulene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-parastitic%22%5BAll+Fields%5D+AND+%22humulene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -13705,7 +13705,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"multiple sclerosis\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22multiple+sclerosis%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
