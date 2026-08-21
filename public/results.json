@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T02:47:52+00:00",
+  "generated_at": "2026-08-21T02:50:52+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61361",
+          "value": "61370",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -3061,7 +3061,7 @@
         },
         {
           "column": "linalool",
-          "value": "12",
+          "value": "#N/A",
           "query": "\"anti-microbial\"[All Fields] AND \"linalool\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22linalool%22%5BAll+Fields%5D",
           "source": "kept",
@@ -3529,7 +3529,7 @@
         },
         {
           "column": "terpineol",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anti-nociceptive\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-nociceptive%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -9841,7 +9841,7 @@
     },
     {
       "term": "respiratory function",
-      "base": "11",
+      "base": "12",
       "cells": [
         {
           "column": "term-only",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -15545,7 +15545,7 @@
         },
         {
           "column": "1, 8, Cineole",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"dystonia\"[All Fields] AND \"1, 8, Cineole\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22dystonia%22%5BAll+Fields%5D+AND+%221%2C+8%2C+Cineole%22%5BAll+Fields%5D",
           "source": "kept",
