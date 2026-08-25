@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T02:51:09+00:00",
+  "generated_at": "2026-08-25T02:48:14+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61385",
+          "value": "61391",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1271,7 +1271,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "2",
+          "value": "#N/A",
           "query": "\"analgesic\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -3013,7 +3013,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "6",
+          "value": "#N/A",
           "query": "\"anti-microbial\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-microbial%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -5133,7 +5133,7 @@
     },
     {
       "term": "anti-tumor",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -5153,7 +5153,7 @@
         },
         {
           "column": "beta-pinene",
-          "value": "#N/A",
+          "value": "9",
           "query": "\"anti-tumor\"[All Fields] AND \"beta-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-tumor%22%5BAll+Fields%5D+AND+%22beta-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -15149,7 +15149,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"GI disorders\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GI+disorders%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "11",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
