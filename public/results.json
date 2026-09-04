@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-03T07:18:05+00:00",
+  "generated_at": "2026-09-04T07:20:45+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "270",
+      "base": "267",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1089",
+          "value": "1091",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61425",
+          "value": "61450",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -5133,7 +5133,7 @@
     },
     {
       "term": "anti-tumor",
-      "base": "11",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "11",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -9417,7 +9417,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "1889",
+          "value": "1890",
           "query": "\"promotes apoptosis in cancer cells\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22promotes+apoptosis+in+cancer+cells%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -16369,7 +16369,7 @@
         },
         {
           "column": "terpineol",
-          "value": "#N/A",
+          "value": "5",
           "query": "\"chronic pain\"[All Fields] AND \"terpineol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22chronic+pain%22%5BAll+Fields%5D+AND+%22terpineol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -16479,7 +16479,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "619",
+          "value": "620",
           "query": "\"restless leg syndrome\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22restless+leg+syndrome%22%5BAll+Fields%5D",
           "source": "kept",
