@@ -1329,7 +1329,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TerpMed Index Card</title>
+    <title>Terpedia PubMed</title>
     <style>
       :root {{ color-scheme: light; }}
       * {{ box-sizing: border-box; }}
@@ -1361,7 +1361,7 @@ def render_html(public_dir: Path, headers: List[str], rows: List[List[str]], jso
   </head>
   <body>
     <main class="card" aria-label="TerpMed compact heat map">
-      <div class="card-title">TerpMed <span>PubMed evidence heat map</span></div>
+      <div class="card-title">Terpedia PubMed <span>evidence heat map</span></div>
       <div class="card-wrap">
         <table>
           <thead>
