@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-10T07:25:40+00:00",
+  "generated_at": "2026-09-11T07:24:07+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "268",
+      "base": "267",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -121,7 +121,7 @@
         },
         {
           "column": "ocimene",
-          "value": "1091",
+          "value": "1092",
           "query": "\"ocimene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22ocimene%22%5BAll+Fields%5D",
           "source": "compound-only",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61495",
+          "value": "61496",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -8459,7 +8459,7 @@
         },
         {
           "column": "\u03b1-bisabolol",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neurological health\"[All Fields] AND \"\u03b1-bisabolol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neurological+health%22%5BAll+Fields%5D+AND+%22%CE%B1-bisabolol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -14335,7 +14335,7 @@
     },
     {
       "term": "HIV",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
