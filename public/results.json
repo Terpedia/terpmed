@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-04T08:37:57+00:00",
+  "generated_at": "2026-10-05T09:23:23+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "269",
+      "base": "268",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61624",
+          "value": "61627",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -16261,7 +16261,7 @@
     },
     {
       "term": "chronic pain",
-      "base": "12",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -16479,7 +16479,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "622",
+          "value": "623",
           "query": "\"restless leg syndrome\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22restless+leg+syndrome%22%5BAll+Fields%5D",
           "source": "kept",
