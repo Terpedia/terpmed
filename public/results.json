@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-07T09:00:58+00:00",
+  "generated_at": "2026-10-08T09:16:52+00:00",
   "source_sheet_id": "1VidNfYpvIzB7SA3SePyhHUil0j-XP1TtiakLfWl24pg",
   "source_gid": "363407775",
   "rows": [
     {
       "term": "compound-only",
-      "base": "268",
+      "base": "267",
       "cells": [
         {
           "column": "alpha-pinene",
@@ -819,7 +819,7 @@
         },
         {
           "column": "alpha-terpinene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"alcohol craving reduction\"[All Fields] AND \"alpha-terpinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22alcohol+craving+reduction%22%5BAll+Fields%5D+AND+%22alpha-terpinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1071,7 +1071,7 @@
       "cells": [
         {
           "column": "term-only",
-          "value": "61636",
+          "value": "61642",
           "query": "\"analgesic\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22analgesic%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1293,7 +1293,7 @@
         },
         {
           "column": "alpha-pinene",
-          "value": "#N/A",
+          "value": "0",
           "query": "\"anorectic\"[All Fields] AND \"alpha-pinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22alpha-pinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -1333,7 +1333,7 @@
         },
         {
           "column": "\u03b2-myrcene",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anorectic\"[All Fields] AND \"\u03b2-myrcene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anorectic%22%5BAll+Fields%5D+AND+%22%CE%B2-myrcene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -2351,7 +2351,7 @@
     },
     {
       "term": "anti-depressant",
-      "base": "5",
+      "base": "4",
       "cells": [
         {
           "column": "term-only",
@@ -2565,7 +2565,7 @@
     },
     {
       "term": "anti-epileptic",
-      "base": "10",
+      "base": "9",
       "cells": [
         {
           "column": "term-only",
@@ -2993,7 +2993,7 @@
     },
     {
       "term": "anti-microbial",
-      "base": "9",
+      "base": "10",
       "cells": [
         {
           "column": "term-only",
@@ -6417,7 +6417,7 @@
     },
     {
       "term": "gastric protection",
-      "base": "14",
+      "base": "13",
       "cells": [
         {
           "column": "term-only",
@@ -6477,7 +6477,7 @@
         },
         {
           "column": "nerolidol",
-          "value": "3",
+          "value": "#N/A",
           "query": "\"gastric protection\"[All Fields] AND \"nerolidol\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22gastric+protection%22%5BAll+Fields%5D+AND+%22nerolidol%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8301,7 +8301,7 @@
         },
         {
           "column": "Sabinene",
-          "value": "1",
+          "value": "#N/A",
           "query": "\"neuro-inflammation\"[All Fields] AND \"Sabinene\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22neuro-inflammation%22%5BAll+Fields%5D+AND+%22Sabinene%22%5BAll+Fields%5D",
           "source": "kept",
@@ -8985,7 +8985,7 @@
     },
     {
       "term": "pharmacokinetic",
-      "base": "10",
+      "base": "11",
       "cells": [
         {
           "column": "term-only",
@@ -10687,7 +10687,7 @@
         },
         {
           "column": "S-carvone",
-          "value": "0",
+          "value": "#N/A",
           "query": "\"anti-cancer\"[All Fields] AND \"S-carvone\"[All Fields]",
           "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22anti-cancer%22%5BAll+Fields%5D+AND+%22S-carvone%22%5BAll+Fields%5D",
           "source": "kept",
@@ -11339,7 +11339,7 @@
     },
     {
       "term": "Pruritis",
-      "base": "5",
+      "base": "6",
       "cells": [
         {
           "column": "term-only",
